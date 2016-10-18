@@ -8,11 +8,11 @@ namespace nobilis\marketing\forms\prebuilt {
     require_once(dirname(__FILE__) . '/../prebuilt-fields/InsuranceProvider.php');
     require_once(dirname(__FILE__) . '/../base/Form.php');
 
-    use \nobilis\marketing\forms\prebuilt\FirstName;
-    use \nobilis\marketing\forms\prebuilt\LastName;
-    use \nobilis\marketing\forms\prebuilt\Phone;
-    use \nobilis\marketing\forms\prebuilt\Email;
-    use \nobilis\marketing\forms\prebuilt\InsuranceProvider;
+    use \nobilis\marketing\forms\prebuilt\fields\FirstName;
+    use \nobilis\marketing\forms\prebuilt\fields\LastName;
+    use \nobilis\marketing\forms\prebuilt\fields\Phone;
+    use \nobilis\marketing\forms\prebuilt\fields\Email;
+    use \nobilis\marketing\forms\prebuilt\fields\InsuranceProvider;
     use \nobilis\marketing\forms\base\Form;
 
     class MainForm extends Form {

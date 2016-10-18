@@ -1,6 +1,6 @@
 <?php
 
-namespace nobilis\marketing\forms\prebuilt {
+namespace nobilis\marketing\forms\prebuilt\fields {
     require_once(dirname(__FILE__) . "/../types/Select.php");
     require_once(dirname(__FILE__) . "/../types/Option.php");
 

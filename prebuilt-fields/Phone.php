@@ -1,6 +1,6 @@
 <?php
 
-namespace nobilis\marketing\forms\prebuilt {
+namespace nobilis\marketing\forms\prebuilt\fields {
     require_once(dirname(__FILE__) . "/../types/Input.php");
     use nobilis\marketing\forms\types\Input;
 
@@ -11,8 +11,10 @@ namespace nobilis\marketing\forms\prebuilt {
             "placeholder" => "Phone Number"
         ];
 
-        function __construct() {
-            parent::__construct(self::$config);
+        function __construct($config = null) {
+            if (!isset($config)) $config = [];
+            $config = array_merge(self::$config, $config);
+            parent::__construct($config);
         }
     }
 }
