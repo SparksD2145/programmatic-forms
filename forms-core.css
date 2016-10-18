@@ -1,0 +1,10 @@
+form {
+    display: block;
+    margin-right: 75%;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}

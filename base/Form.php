@@ -2,16 +2,16 @@
 
 namespace nobilis\marketing\forms\base {
     class Form {
-        private $configuration = array(
+        private $configuration = [
             "items" => null,
             "accept" => null,
             "action" => null,
             "method" => null,
             "autorender" => true,
             "newline" => true
-        );
+        ];
 
-        // Config keys to ignore during render
+        // Config keys to ignore during a
         private static $render_ignore_keys = ["items", "autorender", "newline"];
 
         function __construct($items, $config = null) {

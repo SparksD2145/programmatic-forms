@@ -1,24 +1,15 @@
 <?php
-require(dirname(__FILE__) . '/prebuilt/FirstName.php');
-require(dirname(__FILE__) . '/prebuilt/InsuranceProvider.php');
-require(dirname(__FILE__) . '/base/Form.php');
-
-use \nobilis\marketing\forms\prebuilt\FirstName;
-use \nobilis\marketing\forms\prebuilt\InsuranceProvider;
-use \nobilis\marketing\forms\base\Form;
+require_once(dirname(__FILE__) . '/prebuilt-forms/Main.php');
+use \nobilis\marketing\forms\prebuilt\MainForm;
 ?>
 
 <!doctype html>
 <html>
     <head>
         <title>Demonstration Page</title>
+        <link rel="stylesheet" type="text/css" href="forms-core.css" />
     </head>
     <body>
-        <?php
-            $testing_form = new Form(array(
-                new FirstName(),
-                new InsuranceProvider()
-            ));
-        ?>
+        <?php new MainForm() ?>
     </body>
 </html>
