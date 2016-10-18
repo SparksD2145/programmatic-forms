@@ -1,19 +1,15 @@
 <?php
 
 namespace nobilis\marketing\forms\prebuilt {
-    require_once(dirname(__FILE__) . '/../prebuilt-fields/FirstName.php');
-    require_once(dirname(__FILE__) . '/../prebuilt-fields/LastName.php');
-    require_once(dirname(__FILE__) . '/../prebuilt-fields/Email.php');
-    require_once(dirname(__FILE__) . '/../prebuilt-fields/Phone.php');
-    require_once(dirname(__FILE__) . '/../prebuilt-fields/InsuranceProvider.php');
-    require_once(dirname(__FILE__) . '/../base/Form.php');
+    require_once(dirname(__FILE__) . '/../forms.autoload.php');
 
-    use \nobilis\marketing\forms\prebuilt\fields\FirstName;
-    use \nobilis\marketing\forms\prebuilt\fields\LastName;
-    use \nobilis\marketing\forms\prebuilt\fields\Phone;
-    use \nobilis\marketing\forms\prebuilt\fields\Email;
-    use \nobilis\marketing\forms\prebuilt\fields\InsuranceProvider;
-    use \nobilis\marketing\forms\base\Form;
+    use nobilis\marketing\forms\prebuilt\fields\FirstName;
+    use nobilis\marketing\forms\prebuilt\fields\LastName;
+    use nobilis\marketing\forms\prebuilt\fields\Phone;
+    use nobilis\marketing\forms\prebuilt\fields\Email;
+    use nobilis\marketing\forms\prebuilt\fields\InsuranceProvider;
+    use nobilis\marketing\forms\base\Form;
+    use nobilis\marketing\forms\prebuilt\fields\Submit;
 
     class MainForm extends Form {
         function __construct($config = null) {
