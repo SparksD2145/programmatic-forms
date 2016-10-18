@@ -8,22 +8,21 @@ namespace nobilis\marketing\forms\prebuilt {
     use nobilis\marketing\forms\prebuilt\fields\Phone;
     use nobilis\marketing\forms\prebuilt\fields\Email;
     use nobilis\marketing\forms\prebuilt\fields\InsuranceProvider;
+    use nobilis\marketing\forms\prebuilt\groups\Attribution as AttributionGroup;
     use nobilis\marketing\forms\base\Form;
-    use nobilis\marketing\forms\prebuilt\fields\Submit;
 
-    class MainForm extends Form {
+    class Main extends Form {
         function __construct($config = null) {
             $items = [
                 new FirstName(),
                 new LastName(),
                 new Phone(),
                 new Email(),
-                new InsuranceProvider()
+                new InsuranceProvider(),
+                new AttributionGroup()
             ];
 
             parent::__construct($items, $config);
         }
     }
 }
-
-?>
