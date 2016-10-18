@@ -1,0 +1,17 @@
+# Nobilis Health .gitignore
+# version 1.0.0
+
+# Misc Files
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+[Tt]humbs.db
+dwsync.xml
+
+# Log Files
+*.log
+error_log
+access_log
