@@ -1,6 +1,6 @@
 <?php
     require_once(dirname(__FILE__) . '/forms.autoload.php');
-    use \nobilis\marketing\forms\prebuilt\Main as MainForm;
+    use \nobilis\forms\prebuilt\Main as MainForm;
 ?>
 
 <!doctype html>

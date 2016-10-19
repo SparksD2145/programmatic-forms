@@ -1,6 +1,6 @@
 <?php
 
-namespace nobilis\marketing\forms\base {
+namespace nobilis\forms\base {
     class Form {
         private $configuration = [
             "items" => null,
@@ -11,7 +11,7 @@ namespace nobilis\marketing\forms\base {
             "newline" => true
         ];
 
-        // Config keys to ignore during a
+        // Config keys to ignore during a render
         private static $render_ignore_keys = ["items", "autorender", "newline"];
 
         function __construct($items, $config = null) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace nobilis\marketing\forms\base {
+namespace nobilis\forms\base {
     class FormItem {
         public $configuration = [
             "name" => null,

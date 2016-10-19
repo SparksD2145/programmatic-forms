@@ -7,15 +7,15 @@ namespace nobilis\forms\prebuilt\fields {
     use nobilis\forms\types\Select;
     use nobilis\forms\types\Option;
 
-    class InsuranceProvider extends Select {
+    class InsuranceStateBCBS extends Select {
         private $config = [
-            "name" => "insurance_provider",
-            "placeholder" => "Insurance Provider",
+            "name" => "insurance_state_bcbs",
+            "placeholder" => "Insurance State",
             "options" => []
         ];
 
         function __construct() {
-            $providers = file_get_contents(dirname(__FILE__) . "/../models/insurance_providers.json");
+            $providers = file_get_contents(dirname(__FILE__) . "/../models/bcbs_states.json");
             $providers = json_decode($providers, true);
 
             foreach ($providers as $name => $value) {

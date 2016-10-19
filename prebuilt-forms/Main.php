@@ -1,15 +1,16 @@
 <?php
 
-namespace nobilis\marketing\forms\prebuilt {
+namespace nobilis\forms\prebuilt {
     require_once(dirname(__FILE__) . '/../forms.autoload.php');
 
-    use nobilis\marketing\forms\prebuilt\fields\FirstName;
-    use nobilis\marketing\forms\prebuilt\fields\LastName;
-    use nobilis\marketing\forms\prebuilt\fields\Phone;
-    use nobilis\marketing\forms\prebuilt\fields\Email;
-    use nobilis\marketing\forms\prebuilt\fields\InsuranceProvider;
-    use nobilis\marketing\forms\prebuilt\groups\Attribution as AttributionGroup;
-    use nobilis\marketing\forms\base\Form;
+    use nobilis\forms\prebuilt\fields\FirstName;
+    use nobilis\forms\prebuilt\fields\LastName;
+    use nobilis\forms\prebuilt\fields\Phone;
+    use nobilis\forms\prebuilt\fields\Email;
+    use nobilis\forms\prebuilt\fields\InsuranceProvider;
+    use nobilis\forms\prebuilt\groups\AttributionGroup;
+    use nobilis\forms\prebuilt\groups\InsuranceGroup;
+    use nobilis\forms\base\Form;
 
     class Main extends Form {
         function __construct($config = null) {
@@ -18,7 +19,7 @@ namespace nobilis\marketing\forms\prebuilt {
                 new LastName(),
                 new Phone(),
                 new Email(),
-                new InsuranceProvider(),
+                new InsuranceGroup(),
                 new AttributionGroup()
             ];
 

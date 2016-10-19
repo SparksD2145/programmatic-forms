@@ -1,20 +1,28 @@
 <?php
 
-namespace nobilis\marketing\forms\prebuilt\groups {
+namespace nobilis\forms\prebuilt\groups {
     require_once(dirname(__FILE__) . '/../forms.autoload.php');
 
-    use nobilis\marketing\forms\base\ItemGroup;
-    use nobilis\marketing\forms\prebuilt\fields\Hidden;
+    use nobilis\forms\base\ItemGroup;
+    use nobilis\forms\prebuilt\fields\InsuranceProvider;
+    use nobilis\forms\prebuilt\fields\InsuranceStateBCBS;
+    use nobilis\forms\types\Input;
 
-    class Attribution extends ItemGroup {
+    class InsuranceGroup extends ItemGroup {
         function __construct($config = null) {
             $items = [
-                new Hidden([
-                    "name" => "utm_campaign"
+                new InsuranceProvider([
+                    "required" => true
                 ]),
-                new Hidden([
-                    "name" => "roi_attribution"
+                new InsuranceStateBCBS([
+                    "required" => true
                 ]),
+                new Input([
+                    "type" => "text",
+                    "name" => "other_insurance",
+                    "required" => true,
+                    "placeholder" => "Please specify"
+                ])
             ];
 
             parent::__construct($items, $config);

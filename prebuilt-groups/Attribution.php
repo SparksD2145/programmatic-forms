@@ -1,12 +1,12 @@
 <?php
 
-namespace nobilis\marketing\forms\prebuilt\groups {
+namespace nobilis\forms\prebuilt\groups {
     require_once(dirname(__FILE__) . '/../forms.autoload.php');
 
-    use nobilis\marketing\forms\base\ItemGroup;
-    use nobilis\marketing\forms\prebuilt\fields\Hidden;
+    use nobilis\forms\base\ItemGroup;
+    use nobilis\forms\prebuilt\fields\Hidden;
 
-    class Attribution extends ItemGroup {
+    class AttributionGroup extends ItemGroup {
         function __construct($config = null) {
             $items = [
                 new Hidden([

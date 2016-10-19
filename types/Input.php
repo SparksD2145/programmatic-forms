@@ -1,9 +1,9 @@
 <?php
 
-namespace nobilis\marketing\forms\types {
+namespace nobilis\forms\types {
 
     require_once(dirname(__FILE__) . "/../base/FormItem.php");
-    use \nobilis\marketing\forms\base\FormItem;
+    use \nobilis\forms\base\FormItem;
 
     class Input extends FormItem  {
         public $configuration = array(
