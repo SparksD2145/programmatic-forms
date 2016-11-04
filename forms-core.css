@@ -14,15 +14,3 @@ input {
     text-indent: 5px;
     width: calc(100% - 2px);
 }
-
-form {
-    padding: 50px
-}
-
-.red {
-    background: red;
-}
-
-.blue {
-    background: blue;
-}
