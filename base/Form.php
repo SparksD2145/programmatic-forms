@@ -4,12 +4,19 @@ namespace nobilis\forms\base {
     class Form {
         private $configuration = [
             "items" => null,
+            "name" => null,
+            "class" => null,
             "accept" => null,
             "action" => null,
             "method" => null,
             "autorender" => true,
             "newline" => true
         ];
+
+        // Generate a Globally Unique ID
+        private static function GUID () {
+            return trim(com_create_guid(), '{}');
+        }
 
         // Config keys to ignore during a render
         private static $render_ignore_keys = ["items", "autorender", "newline"];
@@ -33,6 +40,9 @@ namespace nobilis\forms\base {
 
             // Open form
             $builder = "<form ";
+
+            // Assign ID
+            $builder .= "id='". self::GUID() ."' ";
 
             // Clone config to remove items from the list.
             $config = array_merge([], $this->configuration);

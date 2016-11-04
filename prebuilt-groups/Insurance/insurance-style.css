@@ -1,0 +1,4 @@
+select[name="insurance_state_bcbs"],
+input[name="other_insurance"] {
+    display: none;
+}

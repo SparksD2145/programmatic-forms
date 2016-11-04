@@ -4,8 +4,25 @@ form {
 }
 
 input, select {
-    display: block;
-    padding: 5px;
+    height: 25px;
     width: 100%;
     margin-bottom: 10px;
+}
+
+input {
+    border: 1px solid silver;
+    text-indent: 5px;
+    width: calc(100% - 2px);
+}
+
+form {
+    padding: 50px
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
 }

@@ -1,8 +1,6 @@
 <?php
 
 namespace nobilis\forms\prebuilt\groups {
-    require_once(dirname(__FILE__) . '/../forms.autoload.php');
-
     use nobilis\forms\base\ItemGroup;
     use nobilis\forms\prebuilt\fields\Hidden;
 
@@ -14,7 +12,7 @@ namespace nobilis\forms\prebuilt\groups {
                 ]),
                 new Hidden([
                     "name" => "roi_attribution"
-                ]),
+                ])
             ];
 
             parent::__construct($items, $config);

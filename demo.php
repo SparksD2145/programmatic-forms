@@ -8,8 +8,10 @@
     <head>
         <title>Demonstration Page</title>
         <link rel="stylesheet" type="text/css" href="forms-core.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body>
-        <?php new MainForm() ?>
+        <?php new MainForm(["class"=>"red"]) ?>
+        <?php new MainForm(["class"=>"blue"]) ?>
     </body>
 </html>

@@ -9,7 +9,7 @@ namespace nobilis\forms\base {
             "placeholder" => null
         ];
 
-        function __construct ($config) {
+        function __construct (array $config = null) {
             if (isset($config) && !empty($config)) {
                 $this->configuration = array_merge($this->configuration, $config);
             }

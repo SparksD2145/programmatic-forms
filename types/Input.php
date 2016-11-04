@@ -39,7 +39,7 @@ namespace nobilis\forms\types {
         );
 
 
-        function __construct (array $config) {
+        function __construct (array $config = null) {
             parent::__construct($config);
 
             if (isset($config) && !empty($config)) {

@@ -3,6 +3,7 @@
 namespace nobilis\forms\base {
     class ItemGroup {
         private $configuration = [
+            "name" => 'insurance-group',
             "items" => null,
             "autorender" => true,
             "newline" => true
@@ -11,7 +12,7 @@ namespace nobilis\forms\base {
         // Config keys to ignore during a
         private static $render_ignore_keys = ["items", "autorender", "newline"];
 
-        function __construct($items, $config = null) {
+        function __construct(array $items, $config = null) {
             if (isset($items) && !empty($items)) {
                 $this->configuration['items'] = $items;
             }

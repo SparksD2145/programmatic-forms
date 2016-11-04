@@ -5,16 +5,15 @@ namespace nobilis\forms\types {
     require_once(dirname(__FILE__) . "/../base/FormItem.php");
     use \nobilis\forms\base\FormItem;
 
-    class Option extends FormItem  {
+    class Stylesheet extends FormItem  {
         public $configuration = array(
-            "disabled" => false,
-            "label" => null,
-            "selected" => null,
-            "name" => null,
-            "value" => null,
-            "text" => null
+            "href" => null,
+            "media" => null,
+            "sizes" => null,
+            "rel" => 'stylesheet',
+            "property" => 'stylesheet',
+            //"type" => 'text/css'
         );
-
 
         function __construct (array $config = null) {
             parent::__construct($config);
@@ -25,8 +24,8 @@ namespace nobilis\forms\types {
         }
 
         public function render() {
-            // Open option tag
-            $builder = "<option ";
+            // Open link tag
+            $builder = "<link ";
 
             // Add configured attributes
             foreach ($this->configuration as $key => $value) {
@@ -35,11 +34,8 @@ namespace nobilis\forms\types {
                 }
             }
 
-            // If no text is provided, use the name of the option
-            if (!isset($this->configuration['text'])) $this->configuration['text'] = $this->configuration['name'];
-
-            // Close option tag
-            $builder .= ">" . $this->configuration['text'] . "</option>";
+            // Close script tag
+            $builder .= "/>";
 
             // Render
             return $builder;

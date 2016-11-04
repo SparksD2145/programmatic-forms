@@ -19,8 +19,7 @@ namespace nobilis\forms\types {
 
         private static $render_ignore_keys = ["options"];
 
-
-        function __construct (array $config) {
+        function __construct (array $config = null) {
             parent::__construct($config);
 
             if (isset($config) && !empty($config)) {

@@ -1,12 +1,12 @@
 <?php
 
 namespace nobilis\forms\prebuilt\groups {
-    require_once(dirname(__FILE__) . '/../forms.autoload.php');
-
     use nobilis\forms\base\ItemGroup;
     use nobilis\forms\prebuilt\fields\InsuranceProvider;
     use nobilis\forms\prebuilt\fields\InsuranceStateBCBS;
     use nobilis\forms\types\Input;
+    use nobilis\forms\types\Script;
+    use nobilis\forms\types\Stylesheet;
 
     class InsuranceGroup extends ItemGroup {
         function __construct($config = null) {
@@ -22,6 +22,12 @@ namespace nobilis\forms\prebuilt\groups {
                     "name" => "other_insurance",
                     "required" => true,
                     "placeholder" => "Please specify"
+                ]),
+                new Stylesheet([
+                    'href' => 'prebuilt-groups/Insurance/insurance-style.css'
+                ]),
+                new Script([
+                    'src' => 'prebuilt-groups/Insurance/insurance-script.js'
                 ])
             ];
 
