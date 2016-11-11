@@ -4,7 +4,8 @@
         var thisScript = scripts.get([ scripts.length - 1 ]);
         return {
             script: $(thisScript),
-            form: $(thisScript).closest('form')
+            form: $(thisScript).closest('form'),
+            pluginDir: '/wp-content/plugins/programmatic-forms/'
         }
     })();
 
@@ -25,6 +26,6 @@
     }
 
     $.get({
-        url: 'models/insurance_providers.json'
+        url: current.pluginDir + 'models/insurance_providers.json'
     }).done(activateInsuranceWatchers);
 })();

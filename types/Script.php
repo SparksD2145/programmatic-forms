@@ -5,7 +5,7 @@ namespace nobilis\forms\types {
     require_once(dirname(__FILE__) . "/../base/FormItem.php");
     use \nobilis\forms\base\FormItem;
 
-    class Script extends FormItem  {
+    class Script extends FormItem {
         public $configuration = array(
             "async" => false,
             "defer" => false,
@@ -28,6 +28,12 @@ namespace nobilis\forms\types {
             // Add configured attributes
             foreach ($this->configuration as $key => $value) {
                 if (isset($value) && !empty($value)) {
+
+                    // SRC Fix
+                    if ($key == 'src') {
+                        $value = $this->relative_url($value);
+                    }
+
                     $builder .= "$key='$value' ";
                 }
             }

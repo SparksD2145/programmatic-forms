@@ -1,7 +1,15 @@
 <?php
-
+/*
+Plugin Name: Nobilis Health - Programmatic Forms
+Plugin URI:  http://dev.northamericanspine.com/nobilishealth/programmatic-forms
+Description: Programmatic forms, for better development.
+Version:     1.0.0
+Author:      Thomas Ibarra
+Author URI:  http://dev.northamericanspine.com/u/thomas
+Text Domain: nobilis.progforms
+Domain Path: /languages
+*/
 $ignore_files = [
-    'forms.autoload.php',
     'demo.php'
 ];
 
@@ -19,8 +27,8 @@ if ( ! function_exists('glob_recursive')) {
 
 foreach (glob_recursive(dirname(__FILE__) . "/*.php") as $file) {
     foreach ($ignore_files as $ignored) {
-        if (!strpos($file, $ignored)) {
-            include_once $file;
+        if (pathinfo($file)['basename'] !== $ignored) {
+            require_once($file);
         }
     }
 }

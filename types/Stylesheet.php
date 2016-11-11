@@ -30,6 +30,12 @@ namespace nobilis\forms\types {
             // Add configured attributes
             foreach ($this->configuration as $key => $value) {
                 if (isset($value) && !empty($value)) {
+                    // HREF Fix
+                    if ($key == 'href') {
+                        $value = $this->relative_url($value);
+                    }
+
+
                     $builder .= "$key='$value' ";
                 }
             }

@@ -1,5 +1,5 @@
 <?php
-    require_once(dirname(__FILE__) . '/forms.autoload.php');
+    require_once(dirname(__FILE__) . '/autolaunch.php');
     use \nobilis\forms\prebuilt\Main as MainForm;
 ?>
 
