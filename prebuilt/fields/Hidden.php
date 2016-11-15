@@ -1,13 +1,12 @@
 <?php
 
-namespace nobilis\forms\prebuilt\fields {
-    require_once(dirname(__FILE__) . "/../types/Input.php");
-    use nobilis\forms\types\Input;
+namespace pgforms\prebuilt\fields {
+    require_once(dirname(__FILE__) . "/../../types/Input.php");
+    use pgforms\types\Input;
 
-    class Submit extends Input {
+    class Hidden extends Input {
         private static $config = [
-            "type" => "submit",
-            "value" => "Submit"
+            "type" => "hidden"
         ];
 
         function __construct($config = null) {

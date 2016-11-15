@@ -1,9 +1,7 @@
 <?php
 
-namespace nobilis\forms\types {
-
-    require_once(dirname(__FILE__) . "/../base/FormItem.php");
-    use \nobilis\forms\base\FormItem;
+namespace pgforms\types {
+    use pgforms\FormItem;
 
     class Stylesheet extends FormItem  {
         public $configuration = array(

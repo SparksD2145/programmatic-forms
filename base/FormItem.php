@@ -1,6 +1,6 @@
 <?php
 
-namespace nobilis\forms\base {
+namespace pgforms {
     class FormItem {
         public $configuration = [
             "name" => null,

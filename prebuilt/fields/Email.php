@@ -1,8 +1,8 @@
 <?php
 
-namespace nobilis\forms\prebuilt\fields {
-    require_once(dirname(__FILE__) . "/../types/Input.php");
-    use nobilis\forms\types\Input;
+namespace pgforms\prebuilt\fields {
+    require_once(dirname(__FILE__) . "/../../types/Input.php");
+    use pgforms\types\Input;
 
     class Email extends Input {
         private static $config = [

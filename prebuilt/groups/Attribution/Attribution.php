@@ -1,8 +1,8 @@
 <?php
 
-namespace nobilis\forms\prebuilt\groups {
-    use nobilis\forms\base\ItemGroup;
-    use nobilis\forms\prebuilt\fields\Hidden;
+namespace pgforms\prebuilt\groups {
+    use pgforms\ItemGroup;
+    use pgforms\prebuilt\fields\Hidden;
 
     class AttributionGroup extends ItemGroup {
         function __construct($config = null) {

@@ -1,14 +1,14 @@
 <?php
 
-namespace nobilis\forms\prebuilt\fields {
-    require_once(dirname(__FILE__) . "/../types/Input.php");
-    use nobilis\forms\types\Input;
+namespace pgforms\prebuilt\fields {
+    require_once(dirname(__FILE__) . "/../../types/Input.php");
+    use pgforms\types\Input;
 
-    class Phone extends Input {
+    class FirstName extends Input {
         private static $config = [
             "type" => "text",
-            "name" => "phone",
-            "placeholder" => "Phone Number"
+            "name" => "first_name",
+            "placeholder" => "First Name"
         ];
 
         function __construct($config = null) {

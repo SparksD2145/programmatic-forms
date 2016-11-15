@@ -1,14 +1,16 @@
 <?php
 
-namespace nobilis\forms\prebuilt\groups {
-    use nobilis\forms\base\ItemGroup;
-    use nobilis\forms\prebuilt\fields\InsuranceProvider;
-    use nobilis\forms\prebuilt\fields\InsuranceStateBCBS;
-    use nobilis\forms\types\Input;
-    use nobilis\forms\types\Script;
-    use nobilis\forms\types\Stylesheet;
+namespace pgforms\prebuilt\groups {
+    use pgforms\ItemGroup;
+    use pgforms\prebuilt\fields\InsuranceProvider;
+    use pgforms\prebuilt\fields\InsuranceStateBCBS;
+    use pgforms\types\Input;
+    use pgforms\types\Script;
+    use pgforms\types\Stylesheet;
 
     class InsuranceGroup extends ItemGroup {
+        private $directory = 'prebuilt/groups/Insurance/';
+
         function __construct($config = null) {
             $items = [
                 new InsuranceProvider([
@@ -24,10 +26,10 @@ namespace nobilis\forms\prebuilt\groups {
                     "placeholder" => "Please specify"
                 ]),
                 new Stylesheet([
-                    'href' => 'prebuilt-groups/Insurance/insurance-style.css'
+                    'href' => $this->directory . 'insurance-style.css'
                 ]),
                 new Script([
-                    'src' => 'prebuilt-groups/Insurance/insurance-script.js'
+                    'src' => $this->directory . 'insurance-script.js'
                 ])
             ];
 

@@ -10,6 +10,8 @@
     })();
 
     var activateInsuranceWatchers = function (providers) {
+        if (!providers) { return; }
+
         current.form
             .find('select[name="insurance_provider"]')
             .on('change', function () {
@@ -23,9 +25,19 @@
                 var other = current.form.find('[name="other_insurance"]');
                 (value == providers['Other Insurance'] ? other.slideDown() : other.slideUp());
             });
-    }
+    };
 
-    $.get({
-        url: current.pluginDir + 'models/insurance_providers.json'
-    }).done(activateInsuranceWatchers);
+    var file = 'models/insurance_providers.json';
+
+    $
+        .get({
+            url: current.pluginDir + 'models/insurance_providers.json'
+        })
+        .done(activateInsuranceWatchers)
+
+        // On failure, fall back to non-wordpress url
+        .fail(function () {
+            $.get(file).done(activateInsuranceWatchers);
+        });
+
 })();
