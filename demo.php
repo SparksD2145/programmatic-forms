@@ -1,5 +1,5 @@
 <?php
-    require_once(dirname(__FILE__) . '/autolaunch.php');
+    require_once(dirname(__FILE__) . '/autoload.php');
     use pgforms\prebuilt\Main as MainForm;
 ?>
 
