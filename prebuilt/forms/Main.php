@@ -5,7 +5,6 @@ namespace pgforms\prebuilt {
     use pgforms\prebuilt\fields\LastName;
     use pgforms\prebuilt\fields\Phone;
     use pgforms\prebuilt\fields\Email;
-    use pgforms\prebuilt\fields\InsuranceProvider;
     use pgforms\prebuilt\groups\AttributionGroup;
     use pgforms\prebuilt\groups\InsuranceGroup;
     use pgforms\Form;
