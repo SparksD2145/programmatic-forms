@@ -5,6 +5,7 @@ namespace pgforms\prebuilt\groups {
     use pgforms\prebuilt\fields\InsuranceProvider;
     use pgforms\prebuilt\fields\InsuranceStateBCBS;
     use pgforms\types\Input;
+    use pgforms\types\Label;
     use pgforms\types\Script;
     use pgforms\types\Stylesheet;
 
@@ -24,6 +25,10 @@ namespace pgforms\prebuilt\groups {
                     "name" => "other_insurance",
                     "required" => true,
                     "placeholder" => "Please specify"
+                ]),
+                new Label([
+                    "text" => "We are unable to accept Medicare or Medicaid at this time.",
+                    "class" => "disclaimer"
                 ]),
                 new Stylesheet([
                     'href' => $this->directory . 'insurance-style.css'

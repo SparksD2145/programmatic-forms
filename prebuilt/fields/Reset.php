@@ -4,9 +4,10 @@ namespace pgforms\prebuilt\fields {
     require_once(dirname(__FILE__) . "/../../types/Input.php");
     use pgforms\types\Input;
 
-    class Hidden extends Input {
+    class Reset extends Input {
         private static $config = [
-            "type" => "hidden"
+            "type" => "reset",
+            "value" => "Cancel"
         ];
 
         function __construct($config = null) {

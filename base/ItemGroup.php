@@ -4,7 +4,7 @@ namespace pgforms {
     class ItemGroup {
         private $configuration = [
             "name" => 'insurance-group',
-            "items" => null,
+            "items" => [],
             "autorender" => true,
             "newline" => true
         ];
@@ -14,7 +14,7 @@ namespace pgforms {
 
         function __construct(array $items, $config = null) {
             if (isset($items) && !empty($items)) {
-                $this->configuration['items'] = $items;
+                $this->configuration['items'] = array_merge_recursive($this->configuration['items'], $items);
             }
 
             if (isset($config) && !empty($config)) {

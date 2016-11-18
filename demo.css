@@ -3,14 +3,25 @@ form {
     width: 35%;
 }
 
-input, select {
-    height: 25px;
+input:not([type="checkbox"]), select, textarea {
     width: 100%;
+}
+
+input, select, label {
+    height: 25px;
+    font-size: 13px;
     margin-bottom: 10px;
 }
 
 input {
     border: 1px solid silver;
     text-indent: 5px;
-    width: calc(100% - 2px);
+}
+
+input[type="checkbox"] {
+    height: 12px;
+}
+
+textarea {
+    resize: none;
 }

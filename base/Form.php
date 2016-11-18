@@ -3,7 +3,7 @@
 namespace pgforms {
     class Form {
         private $configuration = [
-            "items" => null,
+            "items" => [],
             "name" => null,
             "id" => null,
             "class" => null,
@@ -19,11 +19,11 @@ namespace pgforms {
 
         function __construct($items, $config = null) {
             if (isset($items) && !empty($items)) {
-                $this->configuration['items'] = $items;
+                $this->configuration['items'] = array_merge_recursive($this->configuration['items'], $items);
             }
 
             if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+                $this->configuration = array_merge_recursive($this->configuration, $config);
             }
 
             // if autorender is configured, render the form automatically upon instantiation.
@@ -53,8 +53,11 @@ namespace pgforms {
             // Close opening form tag.
             $builder .= ">";
 
-            // Add form items.
+
             if (isset($this->configuration['items'])) {
+
+
+                // Add form items.
                 foreach ($this->configuration['items'] as $item) {
                     $builder .= $item->render();
 
