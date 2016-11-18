@@ -1,0 +1,17 @@
+.prog-form .half-width {
+    width: 50%;
+}
+
+/* Left */
+.prog-form .half-width:not(.prog-form .half-width + .half-width) {
+    float: left;
+}
+
+/* Right */
+.prog-form .half-width + .half-width {
+    float: right;
+}
+
+.prog-form .half-width + .half-width + * {
+    clear: both;
+}

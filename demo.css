@@ -10,12 +10,18 @@ input:not([type="checkbox"]), select, textarea {
 input, select, label {
     height: 25px;
     font-size: 13px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 input {
     border: 1px solid silver;
     text-indent: 5px;
+}
+
+input:not([type="checkbox"]) {
+    padding: 0;
+    margin: -1px;
+    margin-bottom: 10px;
 }
 
 input[type="checkbox"] {
@@ -24,4 +30,29 @@ input[type="checkbox"] {
 
 textarea {
     resize: none;
+}
+
+.container {
+    margin-bottom: 10px;
+}
+
+
+
+
+.prog-form .half-width {
+    width: 50%;
+}
+
+/* Left */
+.prog-form .half-width:not(.prog-form .half-width + .half-width) {
+    float: left;
+}
+
+/* Right */
+.prog-form .half-width + .half-width {
+    float: right;
+}
+
+.prog-form .half-width + .half-width + * {
+    clear: both;
 }

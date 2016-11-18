@@ -1,12 +1,16 @@
 <?php
 
 namespace pgforms {
-    class ItemGroup {
+    class Container {
         private $configuration = [
+            "class" => "container",
             "items" => [],
             "autorender" => true,
             "newline" => true
         ];
+
+        // Config keys to ignore during a
+        private static $render_ignore_keys = ["items", "autorender", "newline"];
 
         function __construct(array $items, $config = null) {
             if (isset($items) && !empty($items)) {
@@ -24,7 +28,21 @@ namespace pgforms {
         }
 
         public function render() {
-            $builder = "";
+            $builder = "<div ";
+
+            $config = array_merge([], $this->configuration);
+            foreach (self::$render_ignore_keys as $key) {
+                if (isset($config[$key])) unset($config[$key]);
+            }
+
+            // Add configured attributes
+            foreach ($config as $key => $value) {
+                if (isset($value) && !empty($value)) {
+                    $builder .= "$key='$value' ";
+                }
+            }
+
+            $builder .= ">";
 
             // Add group items.
             if (isset($this->configuration['items'])) {
@@ -37,6 +55,8 @@ namespace pgforms {
                     }
                 }
             }
+
+            $builder .= "</div>";
 
             // Render
             return $builder;

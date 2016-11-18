@@ -8,18 +8,23 @@ namespace pgforms\prebuilt {
     use pgforms\prebuilt\fields\Phone;
     use pgforms\prebuilt\fields\Email;
     use pgforms\prebuilt\fields\PrivacyPolicy;
-    use pgforms\prebuilt\fields\Reset;
     use pgforms\prebuilt\fields\Submit;
     use pgforms\prebuilt\groups\AttributionGroup;
     use pgforms\prebuilt\groups\InsuranceGroup;
     use pgforms\Form;
 
     class InfoKit extends Form {
-        function __construct(array $config = null) {
-            $default_name = 'info-kit';
+        private static $default_config = [
+            "class" => " info-kit"
+        ];
 
-            if (!isset($config) || empty($config['name'])) {
-                $config['name'] = $default_name;
+        function __construct(array $config = null) {
+            if (!isset($config)) {
+                $config = self::$default_config;
+            } else if (!isset($config['class'])) {
+                $config['class'] = self::$default_config['class'];
+            } else {
+                $config['class'] .= self::$default_config['class'];
             }
 
             $items = [

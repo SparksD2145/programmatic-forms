@@ -1,6 +1,5 @@
 <?php
     require_once(dirname(__FILE__) . '/autoload.php');
-    use pgforms\prebuilt\Main as MainForm;
 ?>
 
 <!doctype html>
@@ -11,6 +10,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body>
-        <?php new MainForm() ?>
+        <?php new \pgforms\prebuilt\InfoKit() ?>
     </body>
 </html>

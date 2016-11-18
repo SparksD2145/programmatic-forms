@@ -19,12 +19,15 @@ namespace pgforms {
 
         function __construct($items, $config = null) {
             if (isset($items) && !empty($items)) {
-                $this->configuration['items'] = array_merge_recursive($this->configuration['items'], $items);
+                $this->configuration['items'] = array_merge($this->configuration['items'], $items);
             }
 
             if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge_recursive($this->configuration, $config);
+                $this->configuration = array_merge($this->configuration, $config);
             }
+
+            // Add 'prog-form' id
+            $this->configuration['class'] .= " prog-form";
 
             // if autorender is configured, render the form automatically upon instantiation.
             if ($this->configuration['autorender']) {

@@ -1,17 +1,14 @@
 <?php
 
 namespace pgforms\prebuilt {
+    use pgforms\Form;
     use pgforms\prebuilt\fields\FirstName;
     use pgforms\prebuilt\fields\LastName;
-    use pgforms\prebuilt\fields\Phone;
-    use pgforms\prebuilt\fields\Email;
-    use pgforms\prebuilt\groups\AttributionGroup;
-    use pgforms\prebuilt\groups\InsuranceGroup;
-    use pgforms\Form;
+    use pgforms\types\Input;
 
-    class Main extends Form {
+    class Demo extends Form {
         private static $default_config = [
-            "class" => " main"
+            "class" => " demo"
         ];
 
         function __construct(array $config = null) {
@@ -24,12 +21,21 @@ namespace pgforms\prebuilt {
             }
 
             $items = [
-                new FirstName(),
-                new LastName(),
-                new Phone(),
-                new Email(),
-                new InsuranceGroup(),
-                new AttributionGroup()
+                new FirstName([
+                    "class" => "half-width"
+                ]),
+                new LastName([
+                    "class" => "half-width"
+                ]),
+                new Input([
+                    "type" => "text",
+                    "placeholder" => "His Name"
+                ]),
+                new Input([
+                    "type" => "text",
+                    "placeholder" => "Her Name"
+                ]),
+                new Su
             ];
 
             parent::__construct($items, $config);

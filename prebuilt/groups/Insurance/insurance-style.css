@@ -1,9 +1,9 @@
-select[name="insurance_state_bcbs"],
-input[name="other_insurance"] {
+.prog-form select[name="insurance_state_bcbs"],
+.prog-form input[name="other_insurance"] {
     display: none;
 }
 
-label.disclaimer {
+.prog-form label.disclaimer {
     width: 100%;
     text-align: center;
     font-size: small;

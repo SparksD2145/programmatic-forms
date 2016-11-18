@@ -14,8 +14,12 @@ namespace pgforms\prebuilt\groups {
                 new Stylesheet([
                     'href' => $this->directory . 'footer-style.css'
                 ]),
-                new Reset(),
-                new Submit()
+                new Reset([
+                    "class" => "half-width"
+                ]),
+                new Submit([
+                    "class" => "half-width"
+                ])
             ];
 
             parent::__construct($items, $config);
