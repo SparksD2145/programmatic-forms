@@ -2,6 +2,7 @@
     var current = (function autoInitialize () {
         var scripts = $('script');
         var thisScript = scripts.get([ scripts.length - 1 ]);
+
         return {
             script: $(thisScript),
             form: $(thisScript).closest('form'),
@@ -12,9 +13,12 @@
     var activateInsuranceWatchers = function (providers) {
         if (!providers) { return; }
 
+        console.log(current.form);
+
         current.form
             .find('select[name="insurance_provider"]')
             .on('change', function () {
+                console.log('test');
                 var value = $(this).val();
 
                 // BCBS Insurance Handler
@@ -30,14 +34,14 @@
     var file = 'models/insurance_providers.json';
 
     $
-        .get({
+        .getJSON({
             url: current.pluginDir + 'models/insurance_providers.json'
         })
         .done(activateInsuranceWatchers)
 
         // On failure, fall back to non-wordpress url
         .fail(function () {
-            $.get(file).done(activateInsuranceWatchers);
+            $.getJSON(file).done(activateInsuranceWatchers);
         });
 
 })();
