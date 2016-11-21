@@ -15,9 +15,9 @@ namespace pgforms\prebuilt\fields {
                     "type" => "checkbox"
                 ]),
                 new Label([
-                    "text" => 'I accept the' .
+                    "text" => 'I accept the ' .
                         '<a href="/privacy-policy/" target="_blank" style="color: #e28a1e">Privacy Policy</a>' .
-                        'and <a href="/user-agreement/" target="_blank" style="color: #e28a1e">User Agreement</a>.' .
+                        ' and <a href="/user-agreement/" target="_blank" style="color: #e28a1e">User Agreement</a>.' .
                         '<span class="required">*</span></label>'
                 ])
             ];
