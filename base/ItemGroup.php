@@ -2,7 +2,7 @@
 
 namespace pgforms {
     class ItemGroup {
-        private $configuration = [
+        public $configuration = [
             "items" => [],
             "autorender" => true,
             "newline" => true
@@ -10,7 +10,7 @@ namespace pgforms {
 
         function __construct(array $items, $config = null) {
             if (isset($items) && !empty($items)) {
-                $this->configuration['items'] = array_merge($this->configuration['items'], $items);
+                $this->configuration['items'] = array_replace($this->configuration['items'], $items);
             }
 
             if (isset($config) && !empty($config)) {

@@ -19,7 +19,7 @@ namespace pgforms {
 
         function __construct (array $config = null) {
             if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+                $this->configuration = array_replace($this->configuration, $config);
             }
         }
     }

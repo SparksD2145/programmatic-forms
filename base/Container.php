@@ -2,23 +2,26 @@
 
 namespace pgforms {
     class Container {
-        private $configuration = [
-            "class" => "container",
+        public $configuration = [
             "items" => [],
             "autorender" => true,
-            "newline" => true
+            "newline" => true,
+            "attributes" => [
+                "class" => "container"
+            ]
         ];
 
-        // Config keys to ignore during a
-        private static $render_ignore_keys = ["items", "autorender", "newline"];
+        function __construct(array $items, array $config = null, array $attrs = null) {
+            $this->configuration['items'] = array_replace($this->configuration['items'], $items);
 
-        function __construct(array $items, $config = null) {
-            if (isset($items) && !empty($items)) {
-                $this->configuration['items'] = array_merge($this->configuration['items'], $items);
+            // Extend config
+            if (isset($config) && !empty($config)) {
+                $this->configuration = array_replace_recursive($this->configuration, $config);
             }
 
-            if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+            // Extend attributes
+            if (isset($attrs) && !empty($attrs)) {
+                $this->configuration['attributes'] = array_replace($this->configuration['attributes'], $attrs);
             }
 
             // if autorender is configured, render the form automatically upon instantiation.
@@ -31,12 +34,9 @@ namespace pgforms {
             $builder = "<div ";
 
             $config = array_merge([], $this->configuration);
-            foreach (self::$render_ignore_keys as $key) {
-                if (isset($config[$key])) unset($config[$key]);
-            }
 
             // Add configured attributes
-            foreach ($config as $key => $value) {
+            foreach ($config['attributes'] as $key => $value) {
                 if (isset($value) && !empty($value)) {
                     $builder .= "$key='$value' ";
                 }
@@ -44,7 +44,7 @@ namespace pgforms {
 
             $builder .= ">";
 
-            // Add group items.
+            // Add container items.
             if (isset($this->configuration['items'])) {
                 foreach ($this->configuration['items'] as $item) {
                     $builder .= $item->render();
@@ -56,6 +56,7 @@ namespace pgforms {
                 }
             }
 
+            // Close container tag
             $builder .= "</div>";
 
             // Render

@@ -2,32 +2,36 @@
 
 namespace pgforms {
     class Form {
-        private $configuration = [
+        public $configuration = [
             "items" => [],
-            "name" => null,
-            "id" => null,
-            "class" => null,
-            "accept" => null,
-            "action" => null,
-            "method" => null,
             "autorender" => true,
-            "newline" => true
+            "newline" => true,
+            "attributes" => [
+                "name" => null,
+                "id" => null,
+                "class" => null,
+                "accept" => null,
+                "action" => null,
+                "method" => null
+            ]
         ];
 
-        // Config keys to ignore during a render
-        private static $render_ignore_keys = ["items", "autorender", "newline"];
+        function __construct(array $items, array $config = null, array $attrs = null) {
+            // Extend items
+            $this->configuration['items'] = array_replace($this->configuration['items'], $items);
 
-        function __construct($items, $config = null) {
-            if (isset($items) && !empty($items)) {
-                $this->configuration['items'] = array_merge($this->configuration['items'], $items);
+            // Extend configurations
+            if (isset($config)) {
+                $this->configuration = array_replace_recursive($this->configuration, $config);
             }
 
-            if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+            // Extend attributes
+            if (isset($attrs) && !empty($attrs)) {
+                $this->configuration['attributes'] = array_replace($this->configuration['attributes'], $attrs);
             }
 
-            // Add 'prog-form' id
-            $this->configuration['class'] .= " prog-form";
+            // Add 'prog-form' class
+            $this->configuration['attributes']['class'] .= " prog-form";
 
             // if autorender is configured, render the form automatically upon instantiation.
             if ($this->configuration['autorender']) {
@@ -40,14 +44,11 @@ namespace pgforms {
             // Open form
             $builder = "<form ";
 
-            // Clone config to remove items from the list.
-            $config = array_merge([], $this->configuration);
-            foreach (self::$render_ignore_keys as $key) {
-                if (isset($config[$key])) unset($config[$key]);
-            }
+            // Clone attrs to remove items from the list.
+            $attrs = array_merge([], $this->configuration['attributes']);
 
-            // Take each value from the config and add it as an attribute.
-            foreach ($config as $key => $value) {
+            // Take each value from the attrs and add it as an attribute.
+            foreach ($attrs as $key => $value) {
                 if (isset($value) && !empty($value)) {
                     $builder .= "$key='$value' ";
                 }
@@ -56,9 +57,8 @@ namespace pgforms {
             // Close opening form tag.
             $builder .= ">";
 
-
-            if (isset($this->configuration['items'])) {
-
+            // Render items
+            if (!empty($this->configuration['items'])) {
 
                 // Add form items.
                 foreach ($this->configuration['items'] as $item) {
