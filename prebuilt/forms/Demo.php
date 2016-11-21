@@ -34,8 +34,7 @@ namespace pgforms\prebuilt {
                 new Input([
                     "type" => "text",
                     "placeholder" => "Her Name"
-                ]),
-                new Su
+                ])
             ];
 
             parent::__construct($items, $config);
