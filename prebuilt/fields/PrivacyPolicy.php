@@ -16,8 +16,8 @@ namespace pgforms\prebuilt\fields {
                 ]),
                 new Label([
                     "text" => 'I accept the ' .
-                        '<a href="/privacy-policy/" target="_blank" style="color: #e28a1e">Privacy Policy</a>' .
-                        ' and <a href="/user-agreement/" target="_blank" style="color: #e28a1e">User Agreement</a>.' .
+                        '<a href="/privacy-policy" target="_blank">Privacy Policy</a>' .
+                        ' and <a href="/user-agreement" target="_blank">User Agreement</a>.' .
                         '<span class="required">*</span></label>'
                 ])
             ];
