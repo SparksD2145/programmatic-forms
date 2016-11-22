@@ -8,10 +8,14 @@ namespace pgforms\prebuilt\groups {
         function __construct($config = null) {
             $items = [
                 new Hidden([
-                    "name" => "utm_campaign"
+                    "attributes" => [
+                        "name" => "utm_campaign"
+                    ]
                 ]),
                 new Hidden([
-                    "name" => "roi_attribution"
+                    "attributes" => [
+                        "name" => "roi_attribution"
+                    ]
                 ])
             ];
 

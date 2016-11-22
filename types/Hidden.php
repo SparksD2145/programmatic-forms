@@ -6,12 +6,14 @@ namespace pgforms\prebuilt\fields {
 
     class Hidden extends Input {
         private static $config = [
-            "type" => "hidden"
+            "attributes" => [
+                "type" => "hidden"
+            ]
         ];
 
         function __construct($config = null) {
             if (!isset($config)) $config = [];
-            $config = array_merge(self::$config, $config);
+            $config = array_replace_recursive(self::$config, $config);
             parent::__construct($config);
         }
     }

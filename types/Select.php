@@ -4,39 +4,33 @@ namespace pgforms\types {
     use pgforms\FormItem;
 
     class Select extends FormItem  {
-        public $configuration = array(
-            "autofocus" => false,
-            "disabled" => false,
-            "form" => null,
-            "options" => null,
-            "multiple" => false,
-            "required" => false,
-            "selected" => null,
-            "size" => null
-        );
-
-        private static $render_ignore_keys = ["options"];
+        public $configuration = [
+            "attributes" => [
+                "autofocus" => false,
+                "disabled" => false,
+                "form" => null,
+                "multiple" => false,
+                "required" => false,
+                "selected" => null,
+                "size" => null
+            ],
+            "options" => null
+        ];
 
         function __construct (array $config = null) {
-            parent::__construct($config);
-
             if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+                $this->configuration = array_replace_recursive($this->configuration, $config);
             }
+
+            parent::__construct($this->configuration);
         }
 
         public function render() {
             // Open select tag
             $builder = "<select ";
 
-            // Clone config to remove items from the list.
-            $config = array_merge([], $this->configuration);
-            foreach (self::$render_ignore_keys as $key) {
-                if (isset($config[$key])) unset($config[$key]);
-            }
-
             // Add configured attributes
-            foreach ($config as $key => $value) {
+            foreach ($this->configuration['attributes'] as $key => $value) {
                 if (isset($value) && !empty($value)) {
                     $builder .= "$key='$value' ";
                 }

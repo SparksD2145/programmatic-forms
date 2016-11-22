@@ -6,8 +6,10 @@ namespace pgforms\prebuilt\fields {
 
     class Submit extends Input {
         private static $config = [
-            "type" => "submit",
-            "value" => "Submit"
+            "attributes" => [
+                "type" => "submit",
+                "value" => "Submit"
+            ]
         ];
 
         function __construct($config = null) {

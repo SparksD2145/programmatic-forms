@@ -4,21 +4,22 @@ namespace pgforms\types {
     use pgforms\FormItem;
 
     class Stylesheet extends FormItem  {
-        public $configuration = array(
-            "href" => null,
-            "media" => null,
-            "sizes" => null,
-            "rel" => 'stylesheet',
-            "property" => 'stylesheet',
-            //"type" => 'text/css'
-        );
+        public $configuration = [
+            "attributes" => [
+                "href" => null,
+                "media" => null,
+                "sizes" => null,
+                "rel" => 'stylesheet',
+                "property" => 'stylesheet'
+            ]
+        ];
 
         function __construct (array $config = null) {
-            parent::__construct($config);
-
             if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+                $this->configuration = array_replace_recursive($this->configuration, $config);
             }
+
+            parent::__construct($this->configuration);
         }
 
         public function render() {
@@ -26,7 +27,7 @@ namespace pgforms\types {
             $builder = "<link ";
 
             // Add configured attributes
-            foreach ($this->configuration as $key => $value) {
+            foreach ($this->configuration['attributes'] as $key => $value) {
                 if (isset($value) && !empty($value)) {
                     // HREF Fix
                     if ($key == 'href') {

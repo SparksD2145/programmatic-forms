@@ -15,26 +15,34 @@ namespace pgforms\prebuilt\groups {
         function __construct($config = null) {
             $items = [
                 new InsuranceProvider([
-                    "required" => true
+                    "attributes" => ["required" => true]
                 ]),
                 new InsuranceStateBCBS([
-                    "required" => true
+                    "attributes" => ["required" => true]
                 ]),
                 new Input([
-                    "type" => "text",
-                    "name" => "other_insurance",
-                    "required" => true,
-                    "placeholder" => "Please specify"
+                    "attributes" => [
+                        "type" => "text",
+                        "name" => "other_insurance",
+                        "required" => true,
+                        "placeholder" => "Please specify"
+                    ]
                 ]),
                 new Label([
-                    "text" => "We are unable to accept Medicare or Medicaid at this time.",
-                    "class" => "disclaimer"
+                    "attributes" => [
+                        "class" => "disclaimer"
+                    ],
+                    "text" => "We are unable to accept Medicare or Medicaid at this time."
                 ]),
                 new Stylesheet([
-                    'href' => $this->directory . 'insurance-style.css'
+                    "attributes" => [
+                        "href" => $this->directory . 'insurance-style.css'
+                    ]
                 ]),
                 new Script([
-                    'src' => $this->directory . 'insurance-script.js'
+                    "attributes" => [
+                        "src" => $this->directory . 'insurance-script.js'
+                    ]
                 ])
             ];
 

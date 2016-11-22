@@ -6,8 +6,10 @@ namespace pgforms\prebuilt\fields {
 
     class Reset extends Input {
         private static $config = [
-            "type" => "reset",
-            "value" => "Cancel"
+            "attributes" => [
+                "type" => "reset",
+                "value" => "Cancel"
+            ]
         ];
 
         function __construct($config = null) {

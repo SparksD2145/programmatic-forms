@@ -9,8 +9,10 @@ namespace pgforms\prebuilt\fields {
 
     class InsuranceProvider extends Select {
         private $config = [
-            "name" => "insurance_provider",
-            "placeholder" => "Insurance Provider",
+            "attributes" => [
+                "name" => "insurance_provider",
+                "placeholder" => "Insurance Provider",
+            ],
             "options" => []
         ];
 

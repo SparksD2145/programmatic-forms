@@ -6,9 +6,11 @@ namespace pgforms\prebuilt\fields {
 
     class Phone extends Input {
         private static $config = [
-            "type" => "text",
-            "name" => "phone",
-            "placeholder" => "Phone Number"
+            "attributes" => [
+                "type" => "text",
+                "name" => "phone",
+                "placeholder" => "Phone Number"
+            ]
         ];
 
         function __construct($config = null) {

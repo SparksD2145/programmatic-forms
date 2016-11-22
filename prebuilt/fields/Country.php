@@ -9,8 +9,10 @@ namespace pgforms\prebuilt\fields {
 
     class Country extends Select {
         private $config = [
-            "name" => "country",
-            "placeholder" => "Country",
+            "attributes" => [
+                "name" => "country",
+                "placeholder" => "Country",
+            ],
             "options" => []
         ];
 

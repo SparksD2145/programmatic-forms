@@ -11,8 +11,10 @@ namespace pgforms\prebuilt\fields {
         function __construct() {
             $items = [
                 new Input([
-                    "name" => "acceptedPrivacyPolicy",
-                    "type" => "checkbox"
+                    "attributes" => [
+                        "name" => "acceptedPrivacyPolicy",
+                        "type" => "checkbox"
+                    ]
                 ]),
                 new Label([
                     "text" => 'I accept the ' .

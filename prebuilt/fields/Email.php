@@ -6,9 +6,11 @@ namespace pgforms\prebuilt\fields {
 
     class Email extends Input {
         private static $config = [
-            "type" => "email",
-            "name" => "email",
-            "placeholder" => "Email"
+            "attributes" => [
+                "type" => "email",
+                "name" => "email",
+                "placeholder" => "Email"
+            ]
         ];
 
         function __construct($config = null) {

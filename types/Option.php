@@ -4,22 +4,24 @@ namespace pgforms\types {
     use pgforms\FormItem;
 
     class Option extends FormItem  {
-        public $configuration = array(
-            "disabled" => false,
-            "label" => null,
-            "selected" => null,
-            "name" => null,
-            "value" => null,
+        public $configuration = [
+            "attributes" => [
+                "disabled" => false,
+                "label" => null,
+                "selected" => null,
+                "name" => null,
+                "value" => null
+            ],
             "text" => null
-        );
+        ];
 
 
         function __construct (array $config = null) {
-            parent::__construct($config);
-
             if (isset($config) && !empty($config)) {
-                $this->configuration = array_merge($this->configuration, $config);
+                $this->configuration = array_replace_recursive($this->configuration, $config);
             }
+
+            parent::__construct($this->configuration);
         }
 
         public function render() {
@@ -27,7 +29,7 @@ namespace pgforms\types {
             $builder = "<option ";
 
             // Add configured attributes
-            foreach ($this->configuration as $key => $value) {
+            foreach ($this->configuration['attributes'] as $key => $value) {
                 if (isset($value) && !empty($value)) {
                     $builder .= "$key='$value' ";
                 }

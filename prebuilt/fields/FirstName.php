@@ -6,9 +6,11 @@ namespace pgforms\prebuilt\fields {
 
     class FirstName extends Input {
         private static $config = [
-            "type" => "text",
-            "name" => "first_name",
-            "placeholder" => "First Name"
+            "attributes" => [
+                "type" => "text",
+                "name" => "first_name",
+                "placeholder" => "First Name"
+            ]
         ];
 
         function __construct($config = null) {

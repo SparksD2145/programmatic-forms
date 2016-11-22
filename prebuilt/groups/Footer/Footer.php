@@ -12,13 +12,19 @@ namespace pgforms\prebuilt\groups {
         function __construct($config = null) {
             $items = [
                 new Stylesheet([
-                    'href' => $this->directory . 'footer-style.css'
+                    "attributes" => [
+                        "href" => $this->directory . 'footer-style.css'
+                    ]
                 ]),
                 new Reset([
-                    "class" => "half-width"
+                    "attributes" => [
+                        "class" => "half-width"
+                    ]
                 ]),
                 new Submit([
-                    "class" => "half-width"
+                    "attributes" => [
+                        "class" => "half-width"
+                    ]
                 ])
             ];
 
