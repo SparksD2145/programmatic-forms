@@ -1,7 +1,7 @@
 <?php
 
 namespace pgforms\prebuilt\fields {
-    require_once(dirname(__FILE__) . "/Input.php");
+    require_once(dirname(__FILE__) . "/../../types/Input.php");
     use pgforms\types\Input;
 
     class Hidden extends Input {
