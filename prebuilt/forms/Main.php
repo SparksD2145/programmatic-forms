@@ -11,16 +11,14 @@ namespace pgforms\prebuilt {
 
     class Main extends Form {
         private static $default_config = [
-            "class" => " main"
+            "attributes" => [
+                "class" => "main"
+            ]
         ];
 
         function __construct(array $config = null) {
             if (!isset($config)) {
                 $config = self::$default_config;
-            } else if (!isset($config['class'])) {
-                $config['class'] = self::$default_config['class'];
-            } else {
-                $config['class'] .= self::$default_config['class'];
             }
 
             $items = [

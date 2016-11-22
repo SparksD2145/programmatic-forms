@@ -15,16 +15,14 @@ namespace pgforms\prebuilt {
 
     class InfoKit extends Form {
         private static $default_config = [
-            "class" => " info-kit"
+            "attributes" => [
+                "class" => "info-kit"
+            ]
         ];
 
         function __construct(array $config = null) {
             if (!isset($config)) {
                 $config = self::$default_config;
-            } else if (!isset($config['class'])) {
-                $config['class'] = self::$default_config['class'];
-            } else {
-                $config['class'] .= self::$default_config['class'];
             }
 
             $items = [
