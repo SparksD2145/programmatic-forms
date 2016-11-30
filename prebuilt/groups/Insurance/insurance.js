@@ -13,20 +13,17 @@
     var activateInsuranceWatchers = function (providers) {
         if (!providers) { return; }
 
-        console.log(current.form);
-
         current.form
             .find('select[name="insurance_provider"]')
             .on('change', function () {
-                console.log('test');
                 var value = $(this).val();
 
                 // BCBS Insurance Handler
-                var bcbs = current.form.find('[name="insurance_state_bcbs"]');
+                var bcbs = current.form.find('.bcbs-insurance-container');
                 (value == providers['BCBS'] ? bcbs.slideDown() : bcbs.slideUp());
 
                 // Other Insurance Handler
-                var other = current.form.find('[name="other_insurance"]');
+                var other = current.form.find('.other-insurance-container');
                 (value == providers['Other Insurance'] ? other.slideDown() : other.slideUp());
             });
     };
@@ -35,7 +32,7 @@
 
     $
         .getJSON({
-            url: current.pluginDir + 'models/insurance_providers.json'
+            url: current.pluginDir + file
         })
         .done(activateInsuranceWatchers)
 

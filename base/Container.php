@@ -7,7 +7,7 @@ namespace pgforms {
             "autorender" => true,
             "newline" => true,
             "attributes" => [
-                "class" => "container"
+                "class" => "pgform-container"
             ]
         ];
 

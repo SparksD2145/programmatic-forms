@@ -26,7 +26,7 @@ namespace pgforms\types {
             $builder = "<script ";
 
             // Add configured attributes
-            foreach ($this->configuration as $key => $value) {
+            foreach ($this->configuration['attributes'] as $key => $value) {
                 if (isset($value) && !empty($value)) {
 
                     // SRC Fix

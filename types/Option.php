@@ -36,7 +36,7 @@ namespace pgforms\types {
             }
 
             // If no text is provided, use the name of the option
-            if (!isset($this->configuration['text'])) $this->configuration['text'] = $this->configuration['name'];
+            if (!isset($this->configuration['text'])) $this->configuration['text'] = $this->configuration['attributes']['name'];
 
             // Close option tag
             $builder .= ">" . $this->configuration['text'] . "</option>";

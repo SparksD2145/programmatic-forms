@@ -1,5 +1,5 @@
-.prog-form select[name="insurance_state_bcbs"],
-.prog-form input[name="other_insurance"] {
+.prog-form .bcbs-insurance-container,
+.prog-form .other-insurance-container {
     display: none;
 }
 

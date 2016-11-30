@@ -12,9 +12,9 @@ namespace pgforms\prebuilt\fields {
             ]
         ];
 
-        function __construct($config = null) {
+        function __construct(array $config = null) {
             if (!isset($config)) $config = [];
-            $config = array_merge(self::$config, $config);
+            $config = array_replace_recursive(self::$config, $config);
             parent::__construct($config);
         }
     }

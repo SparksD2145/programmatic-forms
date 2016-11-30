@@ -1,6 +1,8 @@
 <?php
 
 namespace pgforms\prebuilt\groups {
+
+    use pgforms\Container;
     use pgforms\ItemGroup;
     use pgforms\prebuilt\fields\InsuranceProvider;
     use pgforms\prebuilt\fields\InsuranceStateBCBS;
@@ -17,31 +19,43 @@ namespace pgforms\prebuilt\groups {
                 new InsuranceProvider([
                     "attributes" => ["required" => true]
                 ]),
-                new InsuranceStateBCBS([
-                    "attributes" => ["required" => true]
-                ]),
-                new Input([
+                new Container([
+                    new InsuranceStateBCBS([
+                        "attributes" => ["required" => true]
+                    ])
+                ], [
                     "attributes" => [
-                        "type" => "text",
-                        "name" => "other_insurance",
-                        "required" => true,
-                        "placeholder" => "Please specify"
+                        "class" => "bcbs-insurance-container"
+                    ]
+                ]),
+                new Container([
+                    new Input([
+                        "attributes" => [
+                            "type" => "text",
+                            "name" => "other_insurance",
+                            "required" => true,
+                            "placeholder" => "Please specify"
+                        ]
+                    ]),
+                ], [
+                    "attributes" => [
+                        "class" => "other-insurance-container"
                     ]
                 ]),
                 new Label([
                     "attributes" => [
                         "class" => "disclaimer"
                     ],
-                    "text" => "We are unable to accept Medicare or Medicaid at this time."
+                    "text" => "We are unable to accept Medicare or Medicaid."
                 ]),
                 new Stylesheet([
                     "attributes" => [
-                        "href" => $this->directory . 'insurance-style.css'
+                        "href" => $this->directory . 'insurance.css'
                     ]
                 ]),
                 new Script([
                     "attributes" => [
-                        "src" => $this->directory . 'insurance-script.js'
+                        "src" => $this->directory . 'insurance.js'
                     ]
                 ])
             ];

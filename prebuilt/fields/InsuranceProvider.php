@@ -22,8 +22,10 @@ namespace pgforms\prebuilt\fields {
 
             foreach ($providers as $name => $value) {
                 array_push($this->config['options'], new Option([
-                    "name" => $name,
-                    "value" => $value
+                    "attributes" => [
+                        "name" => $name,
+                        "value" => $value
+                    ]
                 ]));
             }
 
