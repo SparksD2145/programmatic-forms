@@ -9,7 +9,9 @@ namespace pgforms\prebuilt\fields {
             "attributes" => [
                 "type" => "text",
                 "name" => "phone",
-                "placeholder" => "Phone Number"
+                "placeholder" => "Phone Number",
+                "required" => true,
+                "class" => "phone"
             ]
         ];
 

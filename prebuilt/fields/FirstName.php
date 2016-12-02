@@ -9,13 +9,15 @@ namespace pgforms\prebuilt\fields {
             "attributes" => [
                 "type" => "text",
                 "name" => "first_name",
-                "placeholder" => "First Name"
+                "placeholder" => "First Name",
+                "required" => true,
+                "class" => "first-name"
             ]
         ];
 
         function __construct($config = null) {
             if (!isset($config)) $config = [];
-            $config = array_merge(self::$config, $config);
+            $config = array_replace_recursive(self::$config, $config);
             parent::__construct($config);
         }
     }

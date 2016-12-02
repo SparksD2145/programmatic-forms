@@ -13,7 +13,9 @@ namespace pgforms\prebuilt\fields {
                 new Input([
                     "attributes" => [
                         "name" => "acceptedPrivacyPolicy",
-                        "type" => "checkbox"
+                        "type" => "checkbox",
+                        "required" => true,
+                        "class" => "privacy-policy"
                     ]
                 ]),
                 new Label([

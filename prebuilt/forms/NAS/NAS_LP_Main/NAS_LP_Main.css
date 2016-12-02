@@ -1,0 +1,58 @@
+.lp-main.prog-form label {font-size:13px;font-weight:400;}
+.lp-main.prog-form label.maywerequest {font-size:16px;font-weight:700;margin:10px 0;}
+.lp-main.prog-form label.disclaimer {
+    font-size: x-small;
+    float: left;
+    margin: 0px 0px 5px;
+    width: 100%;
+}
+.lp-main.prog-form input[type="radio"] {height:auto;}
+.lp-main.prog-form input[type="submit"] {
+    height: 50px;
+    width:auto;
+    text-align: center;
+    color: #fff;
+    background-color: #003a70;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    margin: 10px auto 0;
+    display: block;
+    padding: 8px 24px;
+    border-radius: 6px;
+    margin-bottom:10px;
+}
+
+.lp-main.prog-form .invalid:invalid {
+    background-color: #ffdfe0;
+    -webkit-box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);
+    box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);
+    border-color: red;
+}
+
+.prog-form .half-width {
+    width: 50%;
+}
+
+/* Left */
+.prog-form .half-width:not(.prog-form .half-width + .half-width) {
+    float: left;
+}
+
+/* Right */
+.prog-form .half-width + .half-width {
+    float: right;
+}
+
+.prog-form .half-width + .half-width + * {
+    clear: both;
+}
+
+.lp-main.prog-form .first-name.half-width {width:48%;margin-right:2%;}
+.lp-main.prog-form .last-name.half-width {width:48%;margin-left:1%;}
+
+.lp-main.prog-form #mri-center-info {margin-top:5px;}

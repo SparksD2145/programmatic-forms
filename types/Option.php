@@ -33,6 +33,10 @@ namespace pgforms\types {
                 if (isset($value) && !empty($value)) {
                     $builder .= "$key='$value' ";
                 }
+
+                if ($key == 'value' && $value == null) {
+                    $builder .= "$key='' ";
+                }
             }
 
             // If no text is provided, use the name of the option

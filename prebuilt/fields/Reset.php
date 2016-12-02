@@ -8,7 +8,8 @@ namespace pgforms\prebuilt\fields {
         private static $config = [
             "attributes" => [
                 "type" => "reset",
-                "value" => "Cancel"
+                "value" => "Cancel",
+                "class" => "reset"
             ]
         ];
 

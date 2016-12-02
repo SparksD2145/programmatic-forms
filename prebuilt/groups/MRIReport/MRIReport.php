@@ -15,23 +15,31 @@ namespace pgforms\prebuilt\groups {
         function __construct() {
             $items = [
                 new Container([
+                    new Container([
+                        new Label([
+                            "text" => 'May we request your MRI report?',
+                            "attributes" => [
+                                "class" => "maywerequest"
+                            ]
+                        ])
+                    ]),
                     new Input([
                         "attributes" => [
                             "name" => "mRISendMethod",
                             "type" => "radio",
-                            "value" => "true"
+                            "value" => "true",
+                            "required" => true
                         ]
                     ]),
                     new Label([
-                        "text" => 'Yes, Request MRI/CT from Imaging Center'
+                        "text" => 'Yes, request MRI/CT from Imaging Center'
                     ]),
                     new Container([
                         new Input([
                             "attributes" => [
-                                "name" => "imagineCenter",
+                                "name" => "imagingCenter",
                                 "type" => "text",
                                 "class" => "required",
-                                "required" => true,
                                 "placeholder" => "Name of Imaging Center"
                             ]
                         ]),
@@ -41,7 +49,6 @@ namespace pgforms\prebuilt\groups {
                                 "data-mask" => "00/00/0000",
                                 "type" => "text",
                                 "class" => "required",
-                                "required" => true,
                                 "placeholder" => "Date of Birth: mm/dd/yyyy",
                                 "autocomplete" => "off"
                             ]
@@ -59,7 +66,8 @@ namespace pgforms\prebuilt\groups {
                         "attributes" => [
                             "name" => "mRISendMethod",
                             "type" => "radio",
-                            "value" => "false"
+                            "value" => "false",
+                            "required" => true
                         ]
                     ]),
                     new Label([

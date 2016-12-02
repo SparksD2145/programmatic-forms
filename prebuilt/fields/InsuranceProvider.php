@@ -12,6 +12,8 @@ namespace pgforms\prebuilt\fields {
             "attributes" => [
                 "name" => "insurance_provider",
                 "placeholder" => "Insurance Provider",
+                "required" => true,
+                "class" => "insurance-provider"
             ],
             "options" => []
         ];

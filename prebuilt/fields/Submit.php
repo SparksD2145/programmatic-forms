@@ -8,7 +8,8 @@ namespace pgforms\prebuilt\fields {
         private static $config = [
             "attributes" => [
                 "type" => "submit",
-                "value" => "Submit"
+                "value" => "Submit",
+                "class" => "submit"
             ]
         ];
 

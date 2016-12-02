@@ -20,9 +20,7 @@ namespace pgforms\prebuilt\groups {
                     "attributes" => ["required" => true]
                 ]),
                 new Container([
-                    new InsuranceStateBCBS([
-                        "attributes" => ["required" => true]
-                    ])
+                    new InsuranceStateBCBS()
                 ], [
                     "attributes" => [
                         "class" => "bcbs-insurance-container"
@@ -33,7 +31,6 @@ namespace pgforms\prebuilt\groups {
                         "attributes" => [
                             "type" => "text",
                             "name" => "other_insurance",
-                            "required" => true,
                             "placeholder" => "Please specify"
                         ]
                     ]),

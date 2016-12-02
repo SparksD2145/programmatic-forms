@@ -7,21 +7,22 @@ namespace pgforms\prebuilt\fields {
     use pgforms\types\Select;
     use pgforms\types\Option;
 
-    class InsuranceStateBCBS extends Select {
+    class State extends Select {
         private $config = [
             "attributes" => [
-                "name" => "insurance_state_bcbs",
-                "placeholder" => "Insurance State",
-                "class" => "insurance-state"
+                "name" => "state",
+                "placeholder" => "State",
+                "required" => true,
+                "class" => "state"
             ],
             "options" => []
         ];
 
         function __construct() {
-            $providers = file_get_contents(dirname(__FILE__) . "/../../models/bcbs_states.json");
-            $providers = json_decode($providers, true);
+            $states = file_get_contents(dirname(__FILE__) . "/../../models/states.json");
+            $states = json_decode($states, true);
 
-            foreach ($providers as $name => $value) {
+            foreach ($states as $name => $value) {
                 array_push($this->config['options'], new Option([
                     "attributes" => [
                         "name" => $name,

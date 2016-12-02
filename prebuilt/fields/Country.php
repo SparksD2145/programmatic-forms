@@ -12,18 +12,22 @@ namespace pgforms\prebuilt\fields {
             "attributes" => [
                 "name" => "country",
                 "placeholder" => "Country",
+                "required" => true,
+                "class" => "country"
             ],
             "options" => []
         ];
 
         function __construct() {
-            $providers = file_get_contents(dirname(__FILE__) . "/../../models/countries.json");
-            $providers = json_decode($providers, true);
+            $countries = file_get_contents(dirname(__FILE__) . "/../../models/countries.json");
+            $countries = json_decode($countries, true);
 
-            foreach ($providers as $name => $value) {
+            foreach ($countries as $name => $value) {
                 array_push($this->config['options'], new Option([
-                    "name" => $name,
-                    "value" => $value
+                    "attributes" => [
+                        "name" => $name,
+                        "value" => $value
+                    ]
                 ]));
             }
 

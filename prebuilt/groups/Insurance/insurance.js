@@ -19,12 +19,26 @@
                 var value = $(this).val();
 
                 // BCBS Insurance Handler
-                var bcbs = current.form.find('.bcbs-insurance-container');
-                (value == providers['BCBS'] ? bcbs.slideDown() : bcbs.slideUp());
+                var bcbsContainer = current.form.find('.bcbs-insurance-container');
+                var bcbs = current.form.find('[name=insurance_state_bcbs]');
+                if (value == providers['BCBS']) {
+                    bcbsContainer.slideDown();
+                    bcbs.attr("required",true);
+                } else {
+                    bcbsContainer.slideUp();
+                    bcbs.attr("required",false);
+                }
 
                 // Other Insurance Handler
-                var other = current.form.find('.other-insurance-container');
-                (value == providers['Other Insurance'] ? other.slideDown() : other.slideUp());
+                var otherContainer = current.form.find('.other-insurance-container');
+                var other = current.form.find('[name=other_insurance]');
+                if (value == providers['Other Insurance']) {
+                    otherContainer.slideDown();
+                    other.attr("required",true);
+                } else {
+                    otherContainer.slideUp();
+                    other.attr("required",false);
+                }
             });
     };
 
