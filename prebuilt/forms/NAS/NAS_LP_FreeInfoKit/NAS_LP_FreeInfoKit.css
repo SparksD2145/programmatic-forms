@@ -27,7 +27,7 @@
     margin-bottom:10px;
 }
 
-.lp-freeinfokit.prog-form .invalid:invalid {
+.lp-freeinfokit.prog-form.submitform *:invalid {
     background-color: #ffdfe0;
     -webkit-box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);

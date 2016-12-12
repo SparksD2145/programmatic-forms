@@ -59,6 +59,11 @@ namespace pgforms\prebuilt {
                 ]),
                 new Script([
                     "attributes" => [
+                        "src" => 'lib/mask.js'
+                    ]
+                ]),
+                new Script([
+                    "attributes" => [
                         "src" => $this->directory . 'NAS_LP_Main.js'
                     ]
                 ]),

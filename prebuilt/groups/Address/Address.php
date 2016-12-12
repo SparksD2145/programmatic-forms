@@ -45,7 +45,8 @@ namespace pgforms\prebuilt\groups {
                 new PostalCode([
                     "attributes" => [
                         "class"=> "postalcode",
-                        "required" => "true"
+                        "required" => "true",
+                        "maxlength" => "5"
                     ]
                 ])
 

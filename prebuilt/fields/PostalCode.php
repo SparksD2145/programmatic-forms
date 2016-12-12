@@ -10,7 +10,8 @@ namespace pgforms\prebuilt\fields {
                 "type" => "text",
                 "name" => "PostalCode",
                 "placeholder" => "Zip / Postal Code",
-                "class" => "postalcode"
+                "class" => "postalcode",
+                "maxlength" => 5
             ]
         ];
 

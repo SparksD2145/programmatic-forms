@@ -10,6 +10,11 @@
         }
     })();
 
-    jQuery(document).ready(current.form.validate);
+    jQuery(document).ready(function(){
+        current.form.find('.submit').click(function(){
+            current.form.addClass('submitform');
+        });
+        current.form.find('.phone').mask('(999) 999-9999');
+    });
 
 })();
