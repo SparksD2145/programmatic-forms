@@ -1,10 +1,10 @@
 <?php
 
-namespace pgforms\prebuilt\groups {
-    use pgforms\ItemGroup;
-    use pgforms\prebuilt\fields\Reset;
-    use pgforms\prebuilt\fields\Submit;
-    use pgforms\types\Stylesheet;
+namespace pgform\prebuilt\groups {
+    use pgform\ItemGroup;
+    use pgform\prebuilt\fields\Reset;
+    use pgform\prebuilt\fields\Submit;
+    use pgform\types\Stylesheet;
 
     class Footer extends ItemGroup {
         private $directory = 'prebuilt/groups/Footer/';

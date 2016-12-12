@@ -1,11 +1,11 @@
 <?php
 
-namespace pgforms\prebuilt\fields {
+namespace pgform\prebuilt\fields {
     require_once(dirname(__FILE__) . "/../../types/Select.php");
     require_once(dirname(__FILE__) . "/../../types/Option.php");
 
-    use pgforms\types\Select;
-    use pgforms\types\Option;
+    use pgform\types\Select;
+    use pgform\types\Option;
 
     class State extends Select {
         private $config = [

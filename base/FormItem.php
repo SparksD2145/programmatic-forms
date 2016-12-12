@@ -1,6 +1,6 @@
 <?php
 
-namespace pgforms {
+namespace pgform {
     class FormItem {
         public $configuration = [
             "name" => null,

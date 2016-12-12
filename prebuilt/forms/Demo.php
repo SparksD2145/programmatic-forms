@@ -1,10 +1,10 @@
 <?php
 
-namespace pgforms\prebuilt {
-    use pgforms\Form;
-    use pgforms\prebuilt\fields\FirstName;
-    use pgforms\prebuilt\fields\LastName;
-    use pgforms\types\Input;
+namespace pgform\prebuilt {
+    use pgform\Form;
+    use pgform\prebuilt\fields\FirstName;
+    use pgform\prebuilt\fields\LastName;
+    use pgform\types\Input;
 
     class Demo extends Form {
         private static $default_config = [

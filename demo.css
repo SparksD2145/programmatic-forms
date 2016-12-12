@@ -39,20 +39,20 @@ textarea {
 
 
 
-.prog-form .half-width {
+.pgform .half-width {
     width: 50%;
 }
 
 /* Left */
-.prog-form .half-width:not(.prog-form .half-width + .half-width) {
+.pgform .half-width:not(.pgform .half-width + .half-width) {
     float: left;
 }
 
 /* Right */
-.prog-form .half-width + .half-width {
+.pgform .half-width + .half-width {
     float: right;
 }
 
-.prog-form .half-width + .half-width + * {
+.pgform .half-width + .half-width + * {
     clear: both;
 }

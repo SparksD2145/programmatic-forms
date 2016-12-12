@@ -1,13 +1,13 @@
-.lp-main.prog-form label {font-size:13px;font-weight:400;}
-.lp-main.prog-form label.maywerequest {font-size:16px;font-weight:700;margin:10px 0;}
-.lp-main.prog-form label.disclaimer {
+.lp-main.pgform label {font-size:13px;font-weight:400;}
+.lp-main.pgform label.maywerequest {font-size:16px;font-weight:700;margin:10px 0;}
+.lp-main.pgform label.disclaimer {
     font-size: x-small;
     float: left;
     margin: 0px 0px 5px;
     width: 100%;
 }
-.lp-main.prog-form input[type="radio"] {height:auto;}
-.lp-main.prog-form input[type="submit"] {
+.lp-main.pgform input[type="radio"] {height:auto;}
+.lp-main.pgform input[type="submit"] {
     height: 50px;
     width:auto;
     text-align: center;
@@ -26,7 +26,7 @@
     margin-bottom:10px;
 }
 
-.lp-main.prog-form.submitform *:invalid {
+.lp-main.pgform.submitform *:invalid {
     background-color: #ffdfe0;
     -webkit-box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 0 rgba(255,0,0,0.75);
@@ -34,25 +34,25 @@
     border-color: red;
 }
 
-.prog-form .half-width {
+.pgform .half-width {
     width: 50%;
 }
 
 /* Left */
-.prog-form .half-width:not(.prog-form .half-width + .half-width) {
+.pgform .half-width:not(.pgform .half-width + .half-width) {
     float: left;
 }
 
 /* Right */
-.prog-form .half-width + .half-width {
+.pgform .half-width + .half-width {
     float: right;
 }
 
-.prog-form .half-width + .half-width + * {
+.pgform .half-width + .half-width + * {
     clear: both;
 }
 
-.lp-main.prog-form .first-name.half-width {width:48%;margin-right:2%;}
-.lp-main.prog-form .last-name.half-width {width:48%;margin-left:1%;}
+.lp-main.pgform .first-name.half-width {width:48%;margin-right:2%;}
+.lp-main.pgform .last-name.half-width {width:48%;margin-left:1%;}
 
-.lp-main.prog-form #mri-center-info {margin-top:5px;}
+.lp-main.pgform #mri-center-info {margin-top:5px;}

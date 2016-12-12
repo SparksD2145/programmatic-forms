@@ -1,13 +1,13 @@
 <?php
 
-namespace pgforms\prebuilt\groups {
+namespace pgform\prebuilt\groups {
     require_once(dirname(__FILE__) . "/../../../types/Input.php");
-    use pgforms\Container;
-    use pgforms\ItemGroup;
-    use pgforms\types\Input;
-    use pgforms\types\Label;
-    use pgforms\types\Stylesheet;
-    use pgforms\types\Script;
+    use pgform\Container;
+    use pgform\ItemGroup;
+    use pgform\types\Input;
+    use pgform\types\Label;
+    use pgform\types\Stylesheet;
+    use pgform\types\Script;
 
     class MRIReport extends ItemGroup  {
         private $directory = 'prebuilt/groups/MRIReport/';

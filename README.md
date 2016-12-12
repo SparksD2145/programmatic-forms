@@ -1,7 +1,7 @@
 Programmatic Forms
 ==================
 
-A work-in-progress project aimed at delivering a better form development experience.
+A project aimed at delivering a better form development experience, replacing the need for gravity forms on all Nobilis Health websites.
 
 
 ## Installation
@@ -12,12 +12,26 @@ cd $wordpress_root/wp-content/plugins
 git clone http://dev.northamericanspine.com/nobilishealth/programmatic-forms.git
 ```
 
-Once the repository is cloned, you must activate the plugin in your wordpress administration panel.
+Once the repository is cloned, you must activate the plugin in your Wordpress administration panel. If you have [Wordpress CLI][wp-cli] installed, you can activate the plugin via the command line:
 
+```bash
+cd $wordpress_root
+wp plugin activate programmatic-forms
+```
 
 ## Usage
 You can opt to use any prebuilt object or form by simply calling it.
 
 ```php
-<?php new \pgforms\prebuilt\Main() ?>
+<?php new \pgform\prebuilt\Main() ?>
 ```
+
+
+
+
+
+
+
+
+
+[wp-cli]: http://wp-cli.org/

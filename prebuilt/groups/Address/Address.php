@@ -1,13 +1,13 @@
 <?php
 
-namespace pgforms\prebuilt\groups {
-    use pgforms\ItemGroup;
-    use pgforms\prebuilt\fields\Country;
-    use pgforms\prebuilt\fields\State;
-    use pgforms\types\Input;
-    use pgforms\prebuilt\fields\PostalCode;
+namespace pgform\prebuilt\groups {
+    use pgform\ItemGroup;
+    use pgform\prebuilt\fields\Country;
+    use pgform\prebuilt\fields\State;
+    use pgform\types\Input;
+    use pgform\prebuilt\fields\PostalCode;
 
-    class Address extends ItemGroup {
+    class AddressGroup extends ItemGroup {
         function __construct($config = null) {
             $items = [
                 new Input([
@@ -16,7 +16,8 @@ namespace pgforms\prebuilt\groups {
                         "class"=> "address",
                         "required" => "true",
                         "type" => "text",
-                        "placeholder" => "Address"
+                        "placeholder" => "Address",
+                        "autocomplete" => "street-address"
                     ]
                 ]),
                 new Input([

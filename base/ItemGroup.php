@@ -1,6 +1,6 @@
 <?php
 
-namespace pgforms {
+namespace pgform {
     class ItemGroup {
         public $configuration = [
             "items" => [],

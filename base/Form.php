@@ -1,6 +1,6 @@
 <?php
 
-namespace pgforms {
+namespace pgform {
     class Form {
         public $configuration = [
             "items" => [],
@@ -30,8 +30,8 @@ namespace pgforms {
                 $this->configuration['attributes'] = array_replace($this->configuration['attributes'], $attrs);
             }
 
-            // Add 'prog-form' class
-            $this->configuration['attributes']['class'] .= " prog-form";
+            // Add 'pgform' class
+            $this->configuration['attributes']['class'] .= " pgform";
 
             // if autorender is configured, render the form automatically upon instantiation.
             if ($this->configuration['autorender']) {

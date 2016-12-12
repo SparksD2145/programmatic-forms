@@ -1,15 +1,15 @@
 <?php
 
-namespace pgforms\prebuilt\groups {
+namespace pgform\prebuilt\groups {
 
-    use pgforms\Container;
-    use pgforms\ItemGroup;
-    use pgforms\prebuilt\fields\InsuranceProvider;
-    use pgforms\prebuilt\fields\InsuranceStateBCBS;
-    use pgforms\types\Input;
-    use pgforms\types\Label;
-    use pgforms\types\Script;
-    use pgforms\types\Stylesheet;
+    use pgform\Container;
+    use pgform\ItemGroup;
+    use pgform\prebuilt\fields\InsuranceProvider;
+    use pgform\prebuilt\fields\InsuranceStateBCBS;
+    use pgform\types\Input;
+    use pgform\types\Label;
+    use pgform\types\Script;
+    use pgform\types\Stylesheet;
 
     class InsuranceGroup extends ItemGroup {
         private $directory = 'prebuilt/groups/Insurance/';

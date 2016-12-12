@@ -1,13 +1,13 @@
 <?php
 
-namespace pgforms\prebuilt {
-    use pgforms\prebuilt\fields\FirstName;
-    use pgforms\prebuilt\fields\LastName;
-    use pgforms\prebuilt\fields\Phone;
-    use pgforms\prebuilt\fields\Email;
-    use pgforms\prebuilt\groups\AttributionGroup;
-    use pgforms\prebuilt\groups\InsuranceGroup;
-    use pgforms\Form;
+namespace pgform\prebuilt {
+    use pgform\prebuilt\fields\FirstName;
+    use pgform\prebuilt\fields\LastName;
+    use pgform\prebuilt\fields\Phone;
+    use pgform\prebuilt\fields\Email;
+    use pgform\prebuilt\groups\AttributionGroup;
+    use pgform\prebuilt\groups\InsuranceGroup;
+    use pgform\Form;
 
     class Main extends Form {
         private static $default_config = [

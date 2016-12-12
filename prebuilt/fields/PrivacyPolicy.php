@@ -1,10 +1,10 @@
 <?php
 
-namespace pgforms\prebuilt\fields {
+namespace pgform\prebuilt\fields {
     require_once(dirname(__FILE__) . "/../../types/Input.php");
-    use pgforms\Container;
-    use pgforms\types\Input;
-    use pgforms\types\Label;
+    use pgform\Container;
+    use pgform\types\Input;
+    use pgform\types\Label;
 
     class PrivacyPolicy extends Container  {
 

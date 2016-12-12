@@ -1,19 +1,19 @@
 <?php
 
-namespace pgforms\prebuilt {
+namespace pgform\prebuilt {
 
-    use pgforms\prebuilt\fields\FirstName;
-    use pgforms\prebuilt\fields\LastName;
-    use pgforms\prebuilt\fields\Phone;
-    use pgforms\prebuilt\fields\Email;
-    use pgforms\prebuilt\fields\PostalCode;
-    use pgforms\prebuilt\fields\PrivacyPolicy;
-    use pgforms\prebuilt\fields\Submit;
-    use pgforms\prebuilt\groups\AttributionGroup;
-    use pgforms\prebuilt\groups\InsuranceGroup;
-    use pgforms\types\Stylesheet;
-    use pgforms\types\Script;
-    use pgforms\Form;
+    use pgform\prebuilt\fields\FirstName;
+    use pgform\prebuilt\fields\LastName;
+    use pgform\prebuilt\fields\Phone;
+    use pgform\prebuilt\fields\Email;
+    use pgform\prebuilt\fields\PostalCode;
+    use pgform\prebuilt\fields\PrivacyPolicy;
+    use pgform\prebuilt\fields\Submit;
+    use pgform\prebuilt\groups\AttributionGroup;
+    use pgform\prebuilt\groups\InsuranceGroup;
+    use pgform\types\Stylesheet;
+    use pgform\types\Script;
+    use pgform\Form;
 
     class NAS_LP_Webinar extends Form {
         private $directory = 'prebuilt/forms/NAS/NAS_LP_Webinar/';

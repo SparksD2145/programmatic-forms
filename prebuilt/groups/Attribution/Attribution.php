@@ -1,8 +1,8 @@
 <?php
 
-namespace pgforms\prebuilt\groups {
-    use pgforms\ItemGroup;
-    use pgforms\prebuilt\fields\Hidden;
+namespace pgform\prebuilt\groups {
+    use pgform\ItemGroup;
+    use pgform\prebuilt\fields\Hidden;
 
     class AttributionGroup extends ItemGroup {
         function __construct($config = null) {

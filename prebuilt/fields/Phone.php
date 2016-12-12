@@ -1,17 +1,19 @@
 <?php
 
-namespace pgforms\prebuilt\fields {
+namespace pgform\prebuilt\fields {
     require_once(dirname(__FILE__) . "/../../types/Input.php");
-    use pgforms\types\Input;
+    use pgform\types\Input;
 
     class Phone extends Input {
         private static $config = [
             "attributes" => [
-                "type" => "text",
+                "type" => "tel",
                 "name" => "phone",
                 "placeholder" => "Phone Number",
                 "required" => true,
-                "class" => "phone"
+                "class" => "phone",
+                "autocomplete" => "tel",
+                "inputmode" => "tel"
             ]
         ];
 

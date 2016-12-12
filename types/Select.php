@@ -1,7 +1,7 @@
 <?php
 
-namespace pgforms\types {
-    use pgforms\FormItem;
+namespace pgform\types {
+    use pgform\FormItem;
 
     class Select extends FormItem  {
         public $configuration = [
