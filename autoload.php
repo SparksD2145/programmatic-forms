@@ -3,10 +3,10 @@
 Plugin Name: Nobilis Health - Programmatic Forms
 Plugin URI:  http://dev.northamericanspine.com/nobilishealth/programmatic-forms
 Description: Programmatic forms, for better development.
-Version:     1.0.0
+Version:     1.1.0
 Author:      Thomas Ibarra
 Author URI:  http://dev.northamericanspine.com/u/thomas
-Text Domain: nobilis.progforms
+Text Domain: nobilis.pgform
 Domain Path: /languages
 */
 $ignore_files = [
