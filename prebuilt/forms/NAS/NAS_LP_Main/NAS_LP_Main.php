@@ -9,7 +9,6 @@ namespace pgform\prebuilt {
     use pgform\prebuilt\fields\PrivacyPolicy;
     use pgform\prebuilt\fields\Submit;
     use pgform\prebuilt\groups\MRIreport;
-    use pgform\prebuilt\groups\AttributionGroup;
     use pgform\prebuilt\groups\InsuranceGroup;
     use pgform\types\Stylesheet;
     use pgform\types\Script;
@@ -33,12 +32,12 @@ namespace pgform\prebuilt {
 
             $items = [
                 new FirstName([
-                    attributes => [
+                    "attributes" => [
                         "class"=> "half-width first-name"
                     ]
                 ]),
                 new LastName([
-                    attributes => [
+                    "attributes" => [
                         "class"=> "half-width last-name"
                     ]
                 ]),
@@ -48,7 +47,7 @@ namespace pgform\prebuilt {
                 new MRIreport(),
                 new PrivacyPolicy(),
                 new Submit([
-                    attributes => [
+                    "attributes" => [
                         "value"=> $config['submitButtonText']
                     ]
                 ]),

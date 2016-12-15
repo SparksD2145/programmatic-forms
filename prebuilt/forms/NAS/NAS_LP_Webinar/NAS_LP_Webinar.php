@@ -33,12 +33,12 @@ namespace pgform\prebuilt {
 
             $items = [
                 new FirstName([
-                    attributes => [
+                    "attributes" => [
                         "class"=> "half-width first-name"
                     ]
                 ]),
                 new LastName([
-                    attributes => [
+                    "attributes" => [
                         "class"=> "half-width last-name"
                     ]
                 ]),
@@ -48,7 +48,7 @@ namespace pgform\prebuilt {
                 new InsuranceGroup(),
                 new PrivacyPolicy(),
                 new Submit([
-                    attributes => [
+                    "attributes" => [
                         "value"=> $config['submitButtonText']
                     ]
                 ]),
