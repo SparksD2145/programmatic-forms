@@ -15,7 +15,7 @@ if (function_exists('add_shortcode')) {
 
         if (isset($configuration["id"])) {
             $form = "\\pgform\\prebuilt\\" . $configuration["id"];
-            return new $form();
+            new $form($configuration);
         }
     }
     add_shortcode('pgform', 'pgform_shorthand_call');
