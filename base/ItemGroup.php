@@ -1,13 +1,28 @@
 <?php
 
 namespace pgform {
+
+    /**
+     * A means of grouping a number of FormItems together.
+     * @package pgform
+     */
     class ItemGroup {
-        public $configuration = [
+
+        /**
+         * @var array $configuration The default configuration of the form instance.
+         * @private
+         */
+        private $configuration = [
             "items" => [],
             "autorender" => true,
             "newline" => true
         ];
 
+        /**
+         * ItemGroup constructor.
+         * @param array $items FormItems for the ItemGroup.
+         * @param null $config Configuration for the ItemGroup
+         */
         function __construct(array $items, $config = null) {
             if (isset($items) && !empty($items)) {
                 $this->configuration['items'] = array_replace($this->configuration['items'], $items);
@@ -23,6 +38,11 @@ namespace pgform {
             }
         }
 
+        /**
+         * Render the ItemGroup to the Page
+         * @method
+         * @return string
+         */
         public function render() {
             $builder = "";
 

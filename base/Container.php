@@ -1,8 +1,18 @@
 <?php
 
 namespace pgform {
+
+    /**
+     * A means to isolate a group of form items.
+     * @package pgform
+     */
     class Container {
-        public $configuration = [
+
+        /**
+         * @var array $configuration The default configuration of the container instance.
+         * @private
+         */
+        private $configuration = [
             "items" => [],
             "autorender" => true,
             "newline" => true,
@@ -11,6 +21,12 @@ namespace pgform {
             ]
         ];
 
+        /**
+         * Container constructor.
+         * @param array $items FormItems to append to the container.
+         * @param array|null $config Optional configuration array
+         * @param array|null $attrs Optional attributes array (overrides configuration)
+         */
         function __construct(array $items, array $config = null, array $attrs = null) {
             $this->configuration['items'] = array_replace($this->configuration['items'], $items);
 
@@ -30,6 +46,11 @@ namespace pgform {
             }
         }
 
+        /**
+         * Render a container
+         * @method
+         * @return string
+         */
         public function render() {
             $builder = "<div ";
 

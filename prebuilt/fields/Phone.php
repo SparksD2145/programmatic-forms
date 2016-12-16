@@ -5,7 +5,7 @@ namespace pgform\prebuilt\fields {
     use pgform\types\Input;
 
     class Phone extends Input {
-        private static $config = [
+        private $configuration = [
             "attributes" => [
                 "type" => "tel",
                 "name" => "phone",
@@ -19,8 +19,8 @@ namespace pgform\prebuilt\fields {
 
         function __construct($config = null) {
             if (!isset($config)) $config = [];
-            $config = array_merge(self::$config, $config);
-            parent::__construct($config);
+            $this->configuration = array_merge($this->configuration, $config);
+            parent::__construct($this->configuration);
         }
     }
 }

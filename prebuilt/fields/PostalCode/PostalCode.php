@@ -6,10 +6,14 @@ namespace pgform\prebuilt\fields {
     use pgform\ItemGroup;
     use pgform\types\Script;
 
+    /**
+     * Class PostalCode
+     * @package pgform\prebuilt\fields
+     */
     class PostalCode extends ItemGroup {
         private $directory = 'prebuilt/fields/PostalCode/';
 
-        private static $config = [
+        private $configuration = [
             "attributes" => [
                 "type" => "text",
                 "name" => "PostalCode",
@@ -24,10 +28,10 @@ namespace pgform\prebuilt\fields {
 
         function __construct($config = null) {
             if (!isset($config)) $config = [];
-            $config = array_replace_recursive(self::$config, $config);
+            $this->configuration = array_replace_recursive($this->configuration, $config);
 
             $items = [
-                new Input($config),
+                new Input($this->configuration),
                 new Script([
                     "attributes" => [
                         "src" => $this->directory . 'PostalCode.js'

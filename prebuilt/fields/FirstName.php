@@ -5,7 +5,7 @@ namespace pgform\prebuilt\fields {
     use pgform\types\Input;
 
     class FirstName extends Input {
-        private static $config = [
+        private $config = [
             "attributes" => [
                 "type" => "text",
                 "name" => "first_name",
@@ -18,8 +18,8 @@ namespace pgform\prebuilt\fields {
 
         function __construct($config = null) {
             if (!isset($config)) $config = [];
-            $config = array_replace_recursive(self::$config, $config);
-            parent::__construct($config);
+            $this->config = array_replace_recursive($this->config, $config);
+            parent::__construct($this->config);
         }
     }
 }

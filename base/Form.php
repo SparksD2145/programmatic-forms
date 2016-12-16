@@ -1,8 +1,21 @@
 <?php
 
+/**
+ * Programmatic Forms global namespace.
+ * @package pgform
+ */
 namespace pgform {
+    /**
+     * Base form object from which all forms are rendered.
+     * @package pgform
+     */
     class Form {
-        public $configuration = [
+
+        /**
+         * @var array $configuration The default configuration of the form
+         * @private
+         */
+        private $configuration = [
             "items" => [],
             "autorender" => true,
             "newline" => true,
@@ -12,10 +25,19 @@ namespace pgform {
                 "class" => null,
                 "accept" => null,
                 "action" => null,
-                "method" => null
+                "method" => null,
+
+                // For Nobilis Script to interpret form
+                "data-async-submit" => true
             ]
         ];
 
+        /**
+         * Form constructor.
+         * @param array $items FormItems, Containers and ItemGroups to attach to the form.
+         * @param array|null $config Optional configuration for the form
+         * @param array|null $attrs Optional attributes for the form (overrides configuration)
+         */
         function __construct(array $items, array $config = null, array $attrs = null) {
             // Extend items
             $this->configuration['items'] = array_replace($this->configuration['items'], $items);
@@ -39,6 +61,11 @@ namespace pgform {
             }
         }
 
+        /**
+         * Render the form in-place on the page.
+         * @method string render()
+         * @return string
+         */
         public function render() {
 
             // Open form
@@ -76,6 +103,7 @@ namespace pgform {
 
             // Render
             echo $builder;
+            return $builder;
         }
     }
 }

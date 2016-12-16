@@ -8,7 +8,7 @@ namespace pgform\prebuilt\fields {
     use pgform\types\Option;
 
     class State extends Select {
-        private $config = [
+        private $configuration = [
             "attributes" => [
                 "name" => "state",
                 "placeholder" => "State",
@@ -23,7 +23,7 @@ namespace pgform\prebuilt\fields {
             $states = json_decode($states, true);
 
             foreach ($states as $name => $value) {
-                array_push($this->config['options'], new Option([
+                array_push($this->configuration['options'], new Option([
                     "attributes" => [
                         "name" => $name,
                         "value" => $value
@@ -31,7 +31,7 @@ namespace pgform\prebuilt\fields {
                 ]));
             }
 
-            parent::__construct($this->config);
+            parent::__construct($this->configuration);
         }
     }
 }

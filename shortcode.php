@@ -10,7 +10,8 @@ if (function_exists('add_shortcode')) {
     // [pgform]
     function pgform_shorthand_call($attrs) {
         $configuration = shortcode_atts([
-            "id" => null
+            "id" => null,
+            "submit-text" => null
         ], $attrs);
 
         if (isset($configuration["id"])) {
