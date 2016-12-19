@@ -20,7 +20,7 @@ namespace pgform\prebuilt {
             "attributes" => [
                 "class" => "lp-freeinfokit"
             ],
-            "submitButtonText" => null
+            "submit-text" => null
         ];
 
         function __construct(array $config = null) {
@@ -48,7 +48,7 @@ namespace pgform\prebuilt {
                 new PrivacyPolicy(),
                 new Submit([
                     "attributes" => [
-                        "value"=> $config['submitButtonText']
+                        "value"=> $config['submit-text']
                     ]
                 ]),
                 new Stylesheet([

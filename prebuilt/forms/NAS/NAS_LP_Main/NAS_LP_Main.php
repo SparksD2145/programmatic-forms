@@ -20,7 +20,7 @@ namespace pgform\prebuilt {
             "attributes" => [
                 "class" => "lp-main"
             ],
-            "submitButtonText" => null
+            "submit-text" => null
         ];
 
         function __construct(array $config = null) {
@@ -48,7 +48,7 @@ namespace pgform\prebuilt {
                 new PrivacyPolicy(),
                 new Submit([
                     "attributes" => [
-                        "value"=> $config['submitButtonText']
+                        "value"=> $config['submit-text']
                     ]
                 ]),
                 new Stylesheet([
@@ -65,7 +65,7 @@ namespace pgform\prebuilt {
                     "attributes" => [
                         "src" => $this->directory . 'NAS_LP_Main.js'
                     ]
-                ]),
+                ])
             ];
 
             parent::__construct($items, $config);
