@@ -6,8 +6,6 @@
  */
 namespace pgform {
 
-    use pgform\prebuilt\groups\FormIDGroup;
-
     /**
      * Base form object from which all forms are rendered.
      * @package pgform
@@ -24,7 +22,6 @@ namespace pgform {
             "newline" => true,
             "unique-name" => null,
             "attributes" => [
-                "name" => null,
                 "id" => null,
                 "class" => null,
                 "accept" => null,
@@ -59,9 +56,11 @@ namespace pgform {
             // Add 'pgform' class
             $this->configuration['attributes']['class'] .= " pgform";
 
-            // Always add FormID Item
-            $formID = new FormIDGroup($this, $this->configuration);
-            array_push($this->configuration['items'], $formID);
+            // Always add form name
+            $this->configuration['attributes']['name'] = get_class($this);
+            if (isset($this->configuration['unique-name'])) {
+                $this->configuration['attributes']['name'] .= "|" . $this->configuration['unique-name'];
+            }
 
             // if autorender is configured, render the form automatically upon instantiation.
             if ($this->configuration['autorender']) {
