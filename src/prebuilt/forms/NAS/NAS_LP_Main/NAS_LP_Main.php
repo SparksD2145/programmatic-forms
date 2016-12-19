@@ -45,7 +45,6 @@ namespace pgform\prebuilt {
             }
 
             $items = [
-                new PostalCode(),
                 new FirstName([
                     "attributes" => [
                         "class"=> "half-width first-name"

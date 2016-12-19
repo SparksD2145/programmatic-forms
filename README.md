@@ -1,7 +1,7 @@
 Programmatic Forms
 ==================
 
-An environment-agnostic, form-focused project aimed at delivering a better form development experience. Programmatic Forms is designed to replace the need for gravity forms on all Nobilis Health websites.
+An environment-agnostic, form-focused project aimed at delivering a better form development experience.
 
 - [Installation](#installation)
 	- [Cloning the Repository](#cloning-the-repository)
