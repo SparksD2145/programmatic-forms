@@ -25,7 +25,7 @@ if ( ! function_exists('glob_recursive')) {
     }
 }
 
-foreach (glob_recursive(dirname(__FILE__) . "/*.php") as $file) {
+foreach (glob_recursive(dirname(__FILE__) . '/src' . "/*.php") as $file) {
     foreach ($ignore_files as $ignored) {
         if (pathinfo($file)['basename'] !== $ignored) {
             require_once($file);
