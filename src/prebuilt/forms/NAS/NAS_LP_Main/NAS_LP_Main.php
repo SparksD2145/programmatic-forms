@@ -6,6 +6,7 @@ namespace pgform\prebuilt {
     use pgform\prebuilt\fields\LastName;
     use pgform\prebuilt\fields\Phone;
     use pgform\prebuilt\fields\Email;
+    use pgform\prebuilt\fields\PostalCode;
     use pgform\prebuilt\fields\PrivacyPolicy;
     use pgform\prebuilt\fields\Submit;
     use pgform\prebuilt\groups\MRIreport;
@@ -44,6 +45,7 @@ namespace pgform\prebuilt {
             }
 
             $items = [
+                new PostalCode(),
                 new FirstName([
                     "attributes" => [
                         "class"=> "half-width first-name"

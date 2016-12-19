@@ -42,7 +42,7 @@
             });
     };
 
-    var file = 'models/insurance_providers.json';
+    var file = 'src/models/insurance_providers.json';
 
     $
         .getJSON({

@@ -51,7 +51,7 @@ namespace pgform\prebuilt\fields {
                 ])
             ];
 
-            parent::__construct($items, $config);
+            parent::__construct($items);
         }
     }
 }

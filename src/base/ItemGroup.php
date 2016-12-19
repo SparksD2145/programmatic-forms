@@ -11,12 +11,12 @@ namespace pgform {
         /**
          * The default configuration of the form instance.
          */
-        protected $configuration = [
+        private $configuration = [
             /** An array of `FormItems` to pass to the ItemGroup for rendering. */
             "items" => [],
 
             /** Specifies whether or not to automatically render the ItemGroup. */
-            "autorender" => true,
+            "autoecho" => true,
 
             /** Should each FormItem be rendered onto a separate line? */
             "newline" => true
@@ -36,8 +36,8 @@ namespace pgform {
                 $this->configuration = array_merge($this->configuration, $config);
             }
 
-            // if autorender is configured, render the form automatically upon instantiation.
-            if ($this->configuration['autorender']) {
+            // if autoecho is configured, render the form automatically upon instantiation.
+            if ($this->configuration['autoecho']) {
                 $this->render();
             }
         }

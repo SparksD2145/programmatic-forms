@@ -40,7 +40,7 @@ namespace pgform\shortcode {
                 $configuration = array_diff($configuration, [null]);
 
                 // Prevent auto rendering, instead use shortcode rendering.
-                $configuration['autorender'] = false;
+                $configuration['autoecho'] = false;
 
                 // Render form
                 return (new $form($configuration))->render();
