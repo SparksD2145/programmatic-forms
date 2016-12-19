@@ -41,13 +41,19 @@ Programmatic Forms is intended to be utilized in an object-oriented fashion and 
 You can opt to use any prebuilt object or form by simply calling it.
 
 ```php
-<?php new \pgform\prebuilt\Main() ?>
+<?php new \pgform\prebuilt\Demo() ?>
+```
+
+Or in Wordpress shortcode:
+
+```html
+[pgform form="Demo"]
 ```
 
 Alternatively, you can alias a form to a specific name like so:
 
 ```php
-<?php use \pgform\prebuilt\Main as SameFormDifferentName; ?>
+<?php use \pgform\prebuilt\Demo as SameFormDifferentName; ?>
 
 <!-- (skip into the html of your page) -->
 
@@ -55,8 +61,6 @@ Alternatively, you can alias a form to a specific name like so:
     <?php new SameFormDifferentName(); ?>
 </div>
 ```
-
-Additionally, Wordpress short-code form calling is on its way.
 
 
 ## Building New Forms <a name="building-forms"></a>

@@ -62,6 +62,7 @@ namespace pgform {
             }
 
             // Add 'pgform' class
+            echo $this->configuration['attributes'];
             $this->configuration['attributes']['class'] .= " pgform";
 
             // Always add form name
