@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class Input extends FormItem  {
-        public $configuration = array(
+        private $configuration = array(
             "attributes" => [
                 "type" => "text",
                 "accept" => null,

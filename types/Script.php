@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class Script extends FormItem {
-        public $configuration = [
+        private $configuration = [
             "attributes" => [
                 "async" => false,
                 "defer" => false,

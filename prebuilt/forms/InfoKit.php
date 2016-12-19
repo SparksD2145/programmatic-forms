@@ -9,7 +9,6 @@ namespace pgform\prebuilt {
     use pgform\prebuilt\fields\Email;
     use pgform\prebuilt\fields\PrivacyPolicy;
     use pgform\prebuilt\fields\Submit;
-    use pgform\prebuilt\groups\AttributionGroup;
     use pgform\prebuilt\groups\InsuranceGroup;
     use pgform\Form;
 
@@ -31,7 +30,6 @@ namespace pgform\prebuilt {
                 new Phone(),
                 new Email(),
                 new InsuranceGroup(),
-                new AttributionGroup(),
                 new Country(),
                 new PrivacyPolicy(),
                 new Submit()

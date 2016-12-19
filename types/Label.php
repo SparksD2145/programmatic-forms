@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class Label extends FormItem  {
-        public $configuration = [
+        private $configuration = [
             "text" => null,
             "attributes" => []
         ];

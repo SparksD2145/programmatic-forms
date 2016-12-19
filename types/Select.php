@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class Select extends FormItem  {
-        public $configuration = [
+        private $configuration = [
             "attributes" => [
                 "autofocus" => false,
                 "disabled" => false,

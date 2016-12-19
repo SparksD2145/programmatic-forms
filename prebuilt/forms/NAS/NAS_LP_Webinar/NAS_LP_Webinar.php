@@ -9,7 +9,6 @@ namespace pgform\prebuilt {
     use pgform\prebuilt\fields\PostalCode;
     use pgform\prebuilt\fields\PrivacyPolicy;
     use pgform\prebuilt\fields\Submit;
-    use pgform\prebuilt\groups\AttributionGroup;
     use pgform\prebuilt\groups\InsuranceGroup;
     use pgform\types\Stylesheet;
     use pgform\types\Script;

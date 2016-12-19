@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class TextArea extends FormItem  {
-        public $configuration = [
+        private $configuration = [
             "attributes" => [
                 "autocomplete" => false,
                 "autofocus" => false,

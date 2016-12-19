@@ -5,7 +5,6 @@ namespace pgform\prebuilt {
     use pgform\prebuilt\fields\LastName;
     use pgform\prebuilt\fields\Phone;
     use pgform\prebuilt\fields\Email;
-    use pgform\prebuilt\groups\AttributionGroup;
     use pgform\prebuilt\groups\InsuranceGroup;
     use pgform\Form;
 
@@ -27,7 +26,6 @@ namespace pgform\prebuilt {
                 new Phone(),
                 new Email(),
                 new InsuranceGroup(),
-                new AttributionGroup()
             ];
 
             parent::__construct($items, $config);

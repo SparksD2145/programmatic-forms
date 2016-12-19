@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class Stylesheet extends FormItem  {
-        public $configuration = [
+        private $configuration = [
             "attributes" => [
                 "href" => null,
                 "media" => null,

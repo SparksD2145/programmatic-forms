@@ -4,7 +4,7 @@ namespace pgform\types {
     use pgform\FormItem;
 
     class Option extends FormItem  {
-        public $configuration = [
+        private $configuration = [
             "attributes" => [
                 "disabled" => false,
                 "label" => null,
