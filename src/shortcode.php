@@ -1,8 +1,6 @@
 <?php
 /**
  * Programmatic Forms Wordpress shortcode functions
- * @author Thomas Ibarra <tibarra@nobilishealth.com>
- * @since 1.1.0
  */
 
 namespace pgform\shortcode {
@@ -34,13 +32,13 @@ namespace pgform\shortcode {
             $configuration = shortcode_atts($possible_attrs, $attrs);
 
             if (isset($configuration["form"])) {
-                $form = "\\pgform\\prebuilt\\" . $configuration["form"];
+                $form = "\\pgform\\forms\\" . $configuration["form"];
 
                 // Clean out unused config items
                 $configuration = array_diff($configuration, [null]);
 
                 // Prevent auto rendering, instead use shortcode rendering.
-                $configuration['autoecho'] = false;
+                $configuration['auto-echo'] = false;
 
                 // Render form
                 return (new $form($configuration))->render();

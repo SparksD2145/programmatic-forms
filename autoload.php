@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Nobilis Health - Programmatic Forms
-Plugin URI:  http://dev.northamericanspine.com/nobilishealth/programmatic-forms
-Description: Programmatic forms, for better development.
-Version:     1.1.0
-Author:      Thomas Ibarra
-Author URI:  http://dev.northamericanspine.com/u/thomas
-Text Domain: nobilis.pgform
-Domain Path: /languages
+Plugin Name:    Programmatic Forms
+Plugin URI:     http://dev.northamericanspine.com/nobilishealth/programmatic-forms
+Description:    An environment-agnostic, form-focused project aimed at delivering a better form development experience.
+Version:        1.1.0
+Author:         Thomas Ibarra
+Author URI:     https://github.com/SparksD2145
+Text Domain:    com.sparksd2145.programmatic-forms
+Domain Path:    /languages
 */
 $ignore_files = [
     'demo.php'
@@ -26,9 +26,5 @@ if ( ! function_exists('glob_recursive')) {
 }
 
 foreach (glob_recursive(dirname(__FILE__) . '/src' . "/*.php") as $file) {
-    foreach ($ignore_files as $ignored) {
-        if (pathinfo($file)['basename'] !== $ignored) {
-            require_once($file);
-        }
-    }
+    require_once($file);
 }
