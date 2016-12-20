@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name:    Programmatic Forms
-Plugin URI:     http://dev.northamericanspine.com/nobilishealth/programmatic-forms
+Plugin URI:     https://github.com/SparksD2145/programmatic-forms
 Description:    An environment-agnostic, form-focused project aimed at delivering a better form development experience.
-Version:        1.1.0
+Version:        2.2.1
 Author:         Thomas Ibarra
 Author URI:     https://github.com/SparksD2145
 Text Domain:    com.sparksd2145.programmatic-forms
