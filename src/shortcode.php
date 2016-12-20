@@ -2,7 +2,6 @@
 /**
  * Programmatic Forms Wordpress shortcode functions
  */
-
 namespace pgform\shortcode {
     if (function_exists('add_shortcode') && function_exists('shortcode_atts')) {
 
