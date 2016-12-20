@@ -60,7 +60,7 @@ namespace pgform\embedded {
 
 
     if (function_exists("add_action")) {
-        add_action("wp_enqueue_scripts", "\\pgform\\add_included_styles");
-        add_action("wp_enqueue_scripts", "\\pgform\\add_included_scripts");
+        add_action("wp_enqueue_scripts", "\\pgform\\embedded\\add_included_styles");
+        add_action("wp_enqueue_scripts", "\\pgform\\embedded\\add_included_scripts");
     }
 }
