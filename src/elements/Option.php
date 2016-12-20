@@ -32,7 +32,9 @@ namespace pgform\elements {
             $this->configuration = array_replace_recursive($this->configuration, $config);
 
             // If no text is provided, use the name of the option
-            if (!isset($this->configuration['text'])) $this->change_attribute(["name" => $this->configuration["text"]]);
+            if (!isset($this->configuration['text'])) {
+                $this->change_config(["text" => $this->configuration["attributes"]["name"]]);
+            }
 
             parent::__construct($this->configuration);
         }

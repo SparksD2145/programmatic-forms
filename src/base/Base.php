@@ -23,9 +23,6 @@ namespace pgform {
             /** Specifies whether or not to automatically render the entity. */
             "auto-echo" => false,
 
-            /** Should each entity be rendered onto a separate line? */
-            "each-item-on-new-line" => true,
-
             /** Child entities to render */
             "items" => []
         ];
@@ -162,12 +159,8 @@ namespace pgform {
 
                     $builder .= $item->render();
 
-                    // Add a new line if configured
-                    if (array_key_exists("each-item-on-new-line", $this->configuration) &&
-                        $this->configuration["each-item-on-new-line"]) {
-
-                        $builder .= "\n";
-                    }
+                    // Add new line for legibility
+                    $builder .= "\n";
 
                     // Perform post-item rendering
                     if (method_exists($this, "post_render_item")) {
@@ -196,14 +189,16 @@ namespace pgform {
         }
 
         /**
-         * Return the relative url of a file from the plugin's directory.
+         * Return the relative url of a file from the plugin's base directory.
          * @method
          * @param string $path A filename to check the relative url for.
          * @return string
          */
         public function relative_dir_url ($path) {
-            if (function_exists('plugins_url') && function_exists('plugin_dir_path')) {
-                $path = dirname($path);
+            $path = dirname($path);
+            if (function_exists('plugin_dir_path')) {
+                $plugin_dir = plugin_dir_path( dirname(__FILE__) );
+                $path = $plugin_dir . "/src/" . $path;
             }
             return $this->relative_url($path) . "/";
         }
@@ -214,12 +209,12 @@ namespace pgform {
          * @param string $path A filename to check the relative url for.
          * @return string
          */
-        public function relative_dir_url_from_base ($path) {
-            if (function_exists('plugins_url') && function_exists('plugin_dir_path')) {
+        public function relative_file_url ($path) {
+            if (function_exists('plugin_dir_path')) {
                 $plugin_dir = plugin_dir_path( dirname(__FILE__) );
-                $path = $plugin_dir . "/" . $path;
+                $path = $plugin_dir . "/src/" . $path;
             }
-            return $this->relative_url($path) . "/";
+            return $this->relative_url($path);
         }
     }
 }

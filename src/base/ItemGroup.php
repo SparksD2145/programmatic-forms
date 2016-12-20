@@ -1,7 +1,7 @@
 <?php
 
 namespace pgform {
-    require_once(dirname(__FILE__) . "/../base/_BASE.php");
+    require_once(dirname(__FILE__) . "/../base/Base.php");
 
     /**
      * A means of grouping a number of FormItems together without isolating them in a containing element.
