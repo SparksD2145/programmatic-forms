@@ -47,7 +47,7 @@ namespace pgform\embedded {
 
     function add_included_styles () {
         if (function_exists("wp_enqueue_style")) {
-            wp_enqueue_script("PGForm_globals", relative_file_url("includes/scripts/global.js"));
+            wp_enqueue_style("PGForm_globals", relative_file_url("includes/styles/global.css"));
         }
     }
 
@@ -61,6 +61,6 @@ namespace pgform\embedded {
 
     if (function_exists("add_action")) {
         add_action("wp_enqueue_scripts", "\\pgform\\add_included_styles");
-        add_action("wp_enqueue_scripts", "\\pgform\\add_included_styles");
+        add_action("wp_enqueue_scripts", "\\pgform\\add_included_scripts");
     }
 }
