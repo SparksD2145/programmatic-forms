@@ -9,6 +9,7 @@ An environment-agnostic, form-focused project aimed at delivering a better form 
 - [Usage](#usage)
 	- [Calling Forms](#calling-forms)
     - [Building New Forms](#building-forms)
+    - [Adding Form Attributes](#form-attributes)
 
 
 
@@ -108,7 +109,7 @@ This will result in a first name input, a last name input, and a submit/reset bu
 Ideally, forms are intended to be programmatically configurable by passing parameters to a form or form item's constructor. Please refer to existing forms for an example of this behavior.
 
 
-### Adding Form Attributes
+### Adding Form Attributes <a name="form-attributes"></a>
 Adding HTML attributes such as `class` or `name` to a form or form item involves manipulating the configuration object it is passed on instantiation. All attributes are contained under the `attributes` key in the configuration object, like so:
 
 ```php
