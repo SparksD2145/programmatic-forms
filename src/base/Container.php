@@ -6,7 +6,7 @@ namespace pgform {
     /**
      * A means to isolate a group of form items.
      */
-    class Container extends _BASE {
+    class Container extends Base {
         /**
          * Container constructor.
          * @param array $items FormItems to append to the container.

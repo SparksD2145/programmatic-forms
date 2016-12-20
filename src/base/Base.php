@@ -10,7 +10,7 @@ namespace pgform {
      * Base object for all Programmatic Form entities.
      * @package pgform
      */
-    class _BASE {
+    class Base {
 
         /**
          * Base configuration object

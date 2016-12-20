@@ -7,7 +7,7 @@ namespace pgform {
      * Individual form item base.
      * @package pgform
      */
-    class FormItem extends _BASE {
+    class FormItem extends Base {
 
         /**
          * FormItem constructor.

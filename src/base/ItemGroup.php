@@ -7,7 +7,7 @@ namespace pgform {
      * A means of grouping a number of FormItems together without isolating them in a containing element.
      * @package pgform
      */
-    class ItemGroup extends _BASE {
+    class ItemGroup extends Base {
 
         /**
          * ItemGroup constructor.

@@ -6,7 +6,7 @@ namespace pgform {
      * Base form object from which all forms are rendered.
      * @package pgform
      */
-    class Form extends _BASE {
+    class Form extends Base {
 
         /**
          * The default configuration of the form
