@@ -3,6 +3,7 @@
 namespace pgform\forms {
 
     use pgform\Container;
+    use pgform\fields\Country;
     use pgform\Form;
     use pgform\fields\FirstName;
     use pgform\fields\LastName;
@@ -18,17 +19,16 @@ namespace pgform\forms {
         /**
          * @var array
          */
-        public $default_config = [
+        public static $defaults = [
             "attributes" => [
                 "class" => "demo"
             ]
         ];
 
         function __construct(array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $this->default_config);
-            $this->configuration = array_replace_recursive($this->configuration, $config);
 
             $items = [
+                new Country(),
                 new Container([
                     new FirstName([
                         "attributes" => [
@@ -66,7 +66,8 @@ namespace pgform\forms {
                 new Footer()
             ];
 
-            parent::__construct($items, $this->configuration);
+            $this->extend_config(self::$defaults);
+            parent::__construct($items, $config);
         }
     }
 }

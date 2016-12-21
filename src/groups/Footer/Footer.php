@@ -11,8 +11,6 @@ namespace pgform\groups {
      * @package pgform\groups
      */
     class Footer extends ItemGroup {
-        private $directory = 'groups/Footer/';
-
         /**
          * Footer constructor.
          * @param array|null $config

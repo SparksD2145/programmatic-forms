@@ -12,9 +12,10 @@ namespace pgform {
         /**
          * FormItem constructor.
          * @param array|null $config Configuration object for the FormItem
+         * @param array|null $default_config Default Configuration object for the FormItem
          */
-        function __construct (array $config = []) {
-            parent::__construct($config);
+        function __construct (array $config = [], array $default_config = []) {
+            parent::__construct($config, $default_config);
         }
     }
 }

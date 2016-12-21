@@ -8,7 +8,7 @@ namespace pgform\elements {
         /**
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "href" => null,
                 "media" => null,
@@ -23,8 +23,7 @@ namespace pgform\elements {
          * @param array|null $config optional configuration
          */
         function __construct (array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $config);
-            parent::__construct($this->configuration);
+            parent::__construct($config, self::$defaults);
         }
 
         /**

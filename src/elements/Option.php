@@ -13,7 +13,7 @@ namespace pgform\elements {
          * Default Configuration
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "disabled" => false,
                 "label" => null,
@@ -29,14 +29,12 @@ namespace pgform\elements {
          * @param array|null $config
          */
         function __construct (array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $config);
+            parent::__construct($config, self::$defaults);
 
             // If no text is provided, use the name of the option
             if (!isset($this->configuration['text'])) {
                 $this->change_config(["text" => $this->configuration["attributes"]["name"]]);
             }
-
-            parent::__construct($this->configuration);
         }
 
         /**

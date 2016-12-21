@@ -30,9 +30,10 @@ namespace pgform {
         /**
          * _BASE constructor.
          * @param array $config Optional configuration
+         * @param array $default_config The default configuration for the object)
          */
-        function __construct(array $config = []) {
-            // Extend configuration
+        function __construct(array $config = [], array $default_config = []) {
+            $this->extend_config($default_config);
             $this->extend_config($config);
         }
 
@@ -42,7 +43,9 @@ namespace pgform {
          * @param array $new_config A configuration to override the previous with
          */
         public function extend_config(array $new_config) {
-            $this->configuration = array_replace_recursive($this->configuration, $new_config);
+            if (!empty($new_config)) {
+                $this->configuration = array_replace_recursive($this->configuration, $new_config);
+            }
         }
 
         /**
@@ -73,7 +76,7 @@ namespace pgform {
          * @param string $tag The HTML tag of the entity
          * @param bool $is_self_closing Indicates if the entity tag is self closing.
          * @param bool $has_items Indicates if the entity has child entities.
-         * @param null $text Plaintext content of a tag.
+         * @param bool $has_text Plaintext content of a tag.
          * @return string
          */
         public function render_element_tag($tag, $is_self_closing = true, $has_items = false, $has_text = false) {
@@ -210,11 +213,37 @@ namespace pgform {
          * @return string
          */
         public function relative_file_url ($path) {
+            return $this->relative_url($this->relative_file_path($path));
+        }
+
+        /**
+         * Return the relative path of a file from the plugin's base directory.
+         * @method
+         * @param string $path A filename to check the relative url for.
+         * @return string
+         */
+        public function relative_dir_path ($path) {
+            $path = dirname($path);
             if (function_exists('plugin_dir_path')) {
                 $plugin_dir = plugin_dir_path( dirname(__FILE__) );
-                $path = $plugin_dir . "/src/" . $path;
+                $path = $plugin_dir . $path;
             }
-            return $this->relative_url($path);
+            return $path . "/";
+        }
+
+        /**
+         * Return the relative path of a file from the plugin's base directory.
+         * @method
+         * @param string $path A filename to check the relative url for.
+         * @return string
+         */
+        public function relative_file_path ($path) {
+            if (function_exists('plugin_dir_path')) {
+                $plugin_dir = plugin_dir_path( dirname(__FILE__) );
+                $path = $plugin_dir . $path;
+            }
+
+            return $path;
         }
     }
 }

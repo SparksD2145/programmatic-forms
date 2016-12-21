@@ -13,7 +13,7 @@ namespace pgform\fields {
          * Default configuration for the Country field.
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "name" => "country",
                 "placeholder" => "Country",
@@ -26,9 +26,12 @@ namespace pgform\fields {
 
         /**
          * Country constructor.
+         * @param array $config Configuration
          */
-        function __construct() {
-            $countries = file_get_contents(dirname(__FILE__) . "/../models/countries.json");
+        function __construct(array $config = []) {
+            parent::__construct($config, self::$defaults);
+
+            $countries = file_get_contents($this->relative_file_path("models/countries.json"));
             $countries = json_decode($countries, true);
 
             foreach ($countries as $name => $value) {
@@ -39,8 +42,6 @@ namespace pgform\fields {
                     ]
                 ]));
             }
-
-            parent::__construct($this->configuration);
         }
     }
 }

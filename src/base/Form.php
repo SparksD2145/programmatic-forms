@@ -11,7 +11,7 @@ namespace pgform {
         /**
          * The default configuration of the form
          */
-        public $configuration = [
+        public static $defaults = [
             /** An optional unique identifier to append to the form's name */
             "unique-name" => null,
             "attributes" => ["class" => ""]
@@ -22,49 +22,43 @@ namespace pgform {
          * @param array $items FormItems, Containers and ItemGroups to attach to the form.
          * @param array|null $config Optional configuration for the form
          */
-        function __construct(array $items, array $config = null) {
+        function __construct(array $items, array $config = []) {
+            // Instantiate
+            parent::__construct($config, self::$defaults);
+
             // Forms generally auto-echo unless instructed to do otherwise.
             $this->change_config(["auto-echo" => true]);
 
             // Add items to the config
             $this->change_config(["items" => $items]);
 
-            // Extend configurations
-            if (isset($config)) {
-                $config = array_replace_recursive($this->configuration, $config);
-            } else {
-                $config = $this->configuration;
-            }
-
             // Add "pgform" class
-            $config["attributes"]["class"] .= " pgform";
+            $this->configuration["attributes"]["class"] .= " pgform";
 
             // Always add form name
-            $config["attributes"]["name"] = get_class($this);
-            if (isset($config["unique-name"])) {
-                $config["attributes"]["name"] .= "|" . $config["unique-name"];
+            $this->configuration["attributes"]["name"] = get_class($this);
+            if (isset($this->configuration["unique-name"])) {
+                $this->configuration["attributes"]["name"] .= "|" . $this->configuration["unique-name"];
             }
 
             // Loop through items and apply additional logic
-            foreach($config["items"] as $item) {
+            foreach($this->configuration["items"] as $item) {
 
                 // Add submit button logic
-                if (isset($config["submit-text"]) && $item instanceof \pgform\fields\Submit) {
+                if (isset($this->configuration["submit-text"]) && $item instanceof \pgform\fields\Submit) {
                     $item->change_attribute([
-                        "value" => $config["submit-text"]
+                        "value" => $this->configuration["submit-text"]
                     ]);
                 }
 
                 // Add reset button logic
-                if (isset($config["reset-text"]) && $item instanceof \pgform\fields\Reset) {
+                if (isset($this->configuration["reset-text"]) && $item instanceof \pgform\fields\Reset) {
                     $item->change_attribute([
-                        "value" => $config["reset-text"]
+                        "value" => $this->configuration["reset-text"]
                     ]);
                 }
 
             }
-
-            parent::__construct($config);
 
             // If configured to auto render, do so.
             if ($this->configuration["auto-echo"]) {

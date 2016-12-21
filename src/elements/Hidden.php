@@ -14,7 +14,7 @@ namespace pgform\elements {
          * Default configuration for the field.
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "type" => "hidden"
             ]
@@ -25,8 +25,7 @@ namespace pgform\elements {
          * @param array|null $config
          */
         function __construct(array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $config);
-            parent::__construct($this->configuration);
+            parent::__construct($config, self::$defaults);
         }
     }
 }

@@ -13,10 +13,11 @@ namespace pgform {
          * ItemGroup constructor.
          * @param array $items FormItems for the ItemGroup.
          * @param array|null $config Configuration for the ItemGroup
+         * @param array|null $default_config Default Configuration for the ItemGroup
          */
-        function __construct(array $items, array $config = []) {
+        function __construct(array $items, array $config = [], $default_config = []) {
             $this->change_config(["items" => $items]);
-            parent::__construct($config);
+            parent::__construct($config, $default_config);
         }
 
         /**

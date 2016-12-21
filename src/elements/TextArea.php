@@ -8,7 +8,7 @@ namespace pgform\elements {
         /**
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "autocomplete" => false,
                 "autofocus" => false,
@@ -30,8 +30,7 @@ namespace pgform\elements {
          * @param array|null $config
          */
         function __construct (array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $config);
-            parent::__construct($this->configuration);
+            parent::__construct($config, self::$defaults);
         }
 
         /**

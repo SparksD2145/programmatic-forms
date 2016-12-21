@@ -42,7 +42,7 @@ Programmatic Forms is intended to be utilized in an object-oriented fashion and 
 You can opt to use any prebuilt object or form by simply calling it.
 
 ```php
-<?php new \pgform\prebuilt\Demo() ?>
+<?php new \pgform\forms\Demo() ?>
 ```
 
 Or in Wordpress shortcode:
@@ -54,7 +54,7 @@ Or in Wordpress shortcode:
 Alternatively, you can alias a form to a specific name like so:
 
 ```php
-<?php use \pgform\prebuilt\Demo as SameFormDifferentName; ?>
+<?php use \pgform\forms\Demo as SameFormDifferentName; ?>
 
 <!-- (skip into the html of your page) -->
 
@@ -70,7 +70,7 @@ Creating a new programmatic form is a simple process. Begin with a basic boilerp
 ```php
 <?php
 
-namespace pgform\prebuilt {
+namespace pgform\forms {
     use pgform\Form;
 
 	class MY_FORM_NAME extends Form {
@@ -86,11 +86,11 @@ In this basic boilerplate, we have created a form called `MY_FORM_NAME`  and pas
 ```php
 <?php
 
-namespace pgform\prebuilt {
+namespace pgform\forms {
     use pgform\Form;
-    use pgform\prebuilt\fields\FirstName;
-    use pgform\prebuilt\fields\LastName;
-    use pgform\prebuilt\groups\Footer;
+    use pgform\fields\FirstName;
+    use pgform\fields\LastName;
+    use pgform\groups\Footer;
 
 	class MY_FORM_NAME extends Form {
 		function __construct() {

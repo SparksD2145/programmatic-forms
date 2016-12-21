@@ -9,7 +9,7 @@ namespace pgform\elements {
      * @package pgform\elements
      */
     class Input extends FormItem  {
-        public $configuration = array(
+        public static $defaults = array(
             "attributes" => [
                 "type" => "text",
                 "accept" => null,
@@ -47,9 +47,10 @@ namespace pgform\elements {
          * Input constructor.
          * @param array|null $config
          */
-        function __construct (array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $config);
-            parent::__construct($this->configuration);
+        function __construct (array $config = [], $subentity_default_config = []) {
+            parent::__construct(self::$defaults);
+            $this->extend_config($subentity_default_config);
+            $this->extend_config($config);
         }
 
         /**

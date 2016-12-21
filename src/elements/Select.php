@@ -12,7 +12,7 @@ namespace pgform\elements {
         /**
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "autofocus" => false,
                 "disabled" => false,
@@ -29,43 +29,16 @@ namespace pgform\elements {
          * Select constructor.
          * @param array|null $config
          */
-        function __construct (array $config = null) {
-            if (isset($config) && !empty($config)) {
-                $this->cattributesonfiguration = array_replace_recursive($this->configuration, $config);
-            }
-
-            parent::__construct($this->configuration);
+        function __construct (array $config = [], $default_config = []) {
+            $this->extend_config($default_config);
+            parent::__construct($config);
         }
 
         /**
          * @return string
          */
         public function render() {
-            // Open select tag
-            $builder = "<select ";
-
-            // Add configured attributes
-            foreach ($this->configuration['attributes'] as $key => $value) {
-                if (isset($value) && !empty($value)) {
-                    $builder .= "$key='$value' ";
-                }
-            }
-
-            // Close opening select tag
-            $builder .= " />";
-
-            // Add options
-            if (isset($this->configuration['items'])) {
-                foreach ($this->configuration['items'] as $item) {
-                    $builder .= $item->render();
-                }
-            }
-
-            // Close select tag
-            $builder .= "</select>";
-
-            // Render
-            return $builder;
+            return $this->render_element_tag("select", false, true);
         }
     }
 }

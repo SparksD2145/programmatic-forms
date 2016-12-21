@@ -15,7 +15,7 @@ namespace pgform\fields {
          * The default configuration for the Postal Code field.
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "type" => "text",
                 "name" => "PostalCode",
@@ -33,7 +33,7 @@ namespace pgform\fields {
          * @param array $config
          */
         function __construct(array $config = []) {
-            parent::__construct($config);
+            parent::__construct($config, self::$defaults);
 
             $this->configuration["items"] = [
                 new Input($this->configuration),

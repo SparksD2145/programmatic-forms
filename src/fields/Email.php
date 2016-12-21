@@ -13,7 +13,7 @@ namespace pgform\fields {
          * Default configuration for the field.
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "type" => "email",
                 "name" => "email",
@@ -30,8 +30,7 @@ namespace pgform\fields {
          * @param array|null $config
          */
         function __construct(array $config = []) {
-            $this->configuration = array_replace_recursive($this->configuration, $config);
-            parent::__construct($this->configuration);
+            parent::__construct($config, self::$defaults);
         }
     }
 }

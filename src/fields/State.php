@@ -14,7 +14,7 @@ namespace pgform\fields {
          * Default configuration
          * @var array
          */
-        public $configuration = [
+        public static $defaults = [
             "attributes" => [
                 "name" => "state",
                 "placeholder" => "State",
@@ -27,8 +27,10 @@ namespace pgform\fields {
         /**
          * State constructor.
          */
-        function __construct() {
-            $states = file_get_contents(dirname(__FILE__) . "/../models/states.json");
+        function __construct(array $config = []) {
+            parent::__construct($config, self::$defaults);
+
+            $states = file_get_contents($this->relative_file_path("models/states.json"));
             $states = json_decode($states, true);
 
             foreach ($states as $name => $value) {
@@ -39,8 +41,6 @@ namespace pgform\fields {
                     ]
                 ]));
             }
-
-            parent::__construct($this->configuration);
         }
     }
 }
