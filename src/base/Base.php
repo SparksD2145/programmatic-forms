@@ -67,6 +67,14 @@ namespace pgform {
         }
 
         /**
+         * Amend to a string attribute externally.
+         * @method
+         */
+        public function amend_string_attribute($key, $value) {
+            $this->configuration['attributes'][$key] .= " " . $value;
+        }
+
+        /**
          * Abstracted Render method
          */
         public function render() {}
@@ -84,6 +92,9 @@ namespace pgform {
 
             // Perform pre-render rendering
             $builder .= $this->call_hook("pre_render");
+
+            // Perform any associative tasks
+            $this->call_hook("associate");
 
             // Start the tag
             $builder .= "<" . $tag  . " ";
@@ -273,7 +284,7 @@ namespace pgform {
          * @param $method_name
          * @return string
          */
-        private function call_hook ($method_name) {
+        public function call_hook ($method_name) {
             if (method_exists($this, $method_name)) {
                 $result = $this->$method_name();
 

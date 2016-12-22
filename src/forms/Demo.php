@@ -12,7 +12,7 @@ namespace pgform\forms {
 
     /**
      * Demo Form
-     * @package pgform
+     * @package pgform\forms
      */
     class Demo extends Form {
 

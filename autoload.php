@@ -3,7 +3,7 @@
 Plugin Name:    Programmatic Forms
 Plugin URI:     https://github.com/SparksD2145/programmatic-forms
 Description:    An environment-agnostic, form-focused project aimed at delivering a better form development experience.
-Version:        2.2.1
+Version:        2.5.0
 Author:         Thomas Ibarra
 Author URI:     https://github.com/SparksD2145
 Text Domain:    com.sparksd2145.programmatic-forms

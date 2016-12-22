@@ -30,11 +30,11 @@
 
             // Add submit button handler
             form.find('[type="submit"]').click(function(){
-                form.addClass('submitform');
+                form.addClass('form-submit-attempted');
             });
 
             form.find('[type="reset"]').click(function(){
-                form.removeClass('submitform');
+                form.removeClass('form-submit-attempted');
             });
         });
     };
