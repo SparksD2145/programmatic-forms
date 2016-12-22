@@ -83,9 +83,7 @@ namespace pgform {
             $builder = "";
 
             // Perform pre-render rendering
-            if (method_exists($this, "pre_render")) {
-                $builder .= $this->pre_render();
-            }
+            $builder .= $this->call_hook("pre_render");
 
             // Start the tag
             $builder .= "<" . $tag  . " ";
@@ -116,9 +114,7 @@ namespace pgform {
             }
 
             // Perform post-render rendering
-            if (method_exists($this, "post_render")) {
-                $builder .= $this->post_render();
-            }
+            $builder .= $this->call_hook("post_render");
 
             // If the item is instructed to echo, echo it.
             if (array_key_exists("auto-echo", $this->configuration) && $this->configuration["auto-echo"]) {
@@ -156,9 +152,7 @@ namespace pgform {
             if (isset($this->configuration['items'])) {
                 foreach ($this->configuration['items'] as $item) {
 
-                    if (method_exists($this, "pre_render_item")) {
-                        $builder .= $this->post_render_item();
-                    }
+                    $builder .= $this->call_hook("pre_render_item");
 
                     $builder .= $item->render();
 
@@ -166,13 +160,41 @@ namespace pgform {
                     $builder .= "\n";
 
                     // Perform post-item rendering
-                    if (method_exists($this, "post_render_item")) {
-                        $builder .= $this->post_render_item();
-                    }
+                    $builder .= $this->call_hook("post_render_item");
                 }
             }
 
             return $builder;
+        }
+
+        /**
+         * Insert a child entity to this entity
+         * @param mixed $entity A child entity to add
+         * @param null|string|int $position The position to insert the sub-entity.
+         */
+        public function insert ($entity, $position = null) {
+            if (isset($position)) {
+                $pos = $position;
+                if (!is_int($pos)) {
+                    $pos = array_search($position, array_keys($this->configuration["items"]));
+                }
+
+                $this->configuration["items"] = array_merge(
+                    array_slice($this->configuration["items"], 0, $pos),
+                    [$entity],
+                    array_slice($this->configuration["items"], $pos)
+                );
+            } else {
+                array_push($this->configuration["items"], $entity);
+            }
+        }
+
+        /**
+         * Remove a child entity to this entity
+         * @param null|string|int $position The position to remove the sub-entity.
+         */
+        public function remove ($position) {
+            unset($this->configuration["items"][$position]);
         }
 
         /**
@@ -244,6 +266,25 @@ namespace pgform {
             }
 
             return $path;
+        }
+
+        /**
+         * Call a hooked method
+         * @param $method_name
+         * @return string
+         */
+        private function call_hook ($method_name) {
+            if (method_exists($this, $method_name)) {
+                $result = $this->$method_name();
+
+                if (!empty($result) && is_string($result)) {
+                    return $result;
+                } else {
+                    return "";
+                }
+            }
+
+            return "";
         }
     }
 }

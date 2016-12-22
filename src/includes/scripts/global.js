@@ -21,8 +21,24 @@
         }
     };
 
+    /**
+     * Initialize all forms on page with this logic
+     */
+    PGForm.prototype.initForms = function () {
+        jQuery('form.pgform').each(function () {
+            var form = jQuery(this);
+
+            // Add submit button handler
+            form.find('[type="submit"]').click(function(){
+                form.addClass('submitform');
+            });
+
+            form.find('[type="reset"]').click(function(){
+                form.removeClass('submitform');
+            });
+        });
+    };
+
     window.PGForm = new PGForm();
+    jQuery(document).ready(window.PGForm.initForms());
 })();
-
-
-
