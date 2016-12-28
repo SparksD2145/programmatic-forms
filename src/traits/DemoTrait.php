@@ -5,9 +5,9 @@ namespace pgform\traits {
 
     /**
      * Demo Trait
-     * @package pgform
+     * @package pgform\traits
      */
-    trait NASForm {
+    trait DemoTrait {
         public function associate () {
             $this->amend_string_attribute("class", "demo-association");
             $this->insert(new Input());
